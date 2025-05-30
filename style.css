@@ -111,8 +111,8 @@ ul {
 
 .project-img {
   display: block;
-  height: 120px;
-  width: 180px;
+  height: 30px;
+  width: 45px;
   object-fit: cover;
   margin: 0 auto 1rem auto;
   border-radius: 12px;
