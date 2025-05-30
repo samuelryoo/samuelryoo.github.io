@@ -111,15 +111,13 @@ ul {
 
 .project-img {
   display: block;
-  max-height: 160px;
-  width: 100%;
-  max-width: 300px;
+  height: 120px;
+  width: 180px;
   object-fit: cover;
   margin: 0 auto 1rem auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px var(--shadow);
 }
-
 
 footer {
   text-align: center;
