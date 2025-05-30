@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Ryoo | Engineering Portfolio</title>
+  <style>
+    :root {
+      --accent: #3a86ff;
+      --background: #fefefe;
+      --text: #1a1a1a;
+      --section-bg: #f5f7fa;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.25rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--section-bg);
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Samuel Ryoo</h1>
+    <p>Computer Science & Engineering | Aspiring Embedded & Digital Systems Engineer</p>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+
+    <div class="project-card">
+      <h3>Rock-Paper-Scissors Robotic Hand</h3>
+      <p>Designed an AVR-controlled robotic hand using servos and push-button logic to simulate Rock-Paper-Scissors gameplay. Developed embedded C logic and PWM control for precise hand gestures.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>32-bit ALU in Verilog</h3>
+      <p>Implemented a modular Arithmetic Logic Unit in Verilog supporting ADD, SUB, AND, OR, SLT, and tested using simulation waveforms. Focused on overflow detection and signed operations.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Sensor Logger with Web Dashboard</h3>
+      <p>Built a sensor-based data logger using Arduino and Python Flask for real-time visualization. Logged temperature and motion data over time and uploaded to a live dashboard.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>C/C++, Python, Verilog, HTML/CSS</li>
+      <li>AVR, Arduino, SPI, I2C, PWM</li>
+      <li>Vivado, KiCad, LTSpice, Git</li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: samuel.ryoo@uci.edu</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/samuelryoo" target="_blank">linkedin.com/in/samuelryoo</a></p>
+    <p>GitHub: <a href="https://github.com/samuelryoo" target="_blank">github.com/samuelryoo</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Samuel Ryoo | Engineering Portfolio
+  </footer>
+</body>
+</html>
