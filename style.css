@@ -109,14 +109,16 @@ ul {
   flex: 1 1 55%;
 }
 
-.project-img-right {
-  flex: 1 1 40%;
-  max-width: 100%;
-  height: auto;
+.project-img {
+  display: block;
+  height: 200px;
+  width: auto;
+  margin: 0 auto 1rem auto;
   border-radius: 12px;
-  box-shadow: 0 4px 10px var(--shadow);
   object-fit: cover;
+  box-shadow: 0 4px 10px var(--shadow);
 }
+
 
 footer {
   text-align: center;
