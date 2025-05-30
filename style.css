@@ -130,7 +130,7 @@ a:hover {
 .skill-card {
   flex: 1 1 320px;
   max-width: 400px;
-  min-height: 180px; /* Sets equal box height */
+  min-height: 90px; /* Sets equal box height */
   background: #ffffff;
   border: 1px solid #d1d5db;
   border-radius: 12px;
