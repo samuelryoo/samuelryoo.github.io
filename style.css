@@ -1,66 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samuel Ryoo | Engineering Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Samuel Ryoo</h1>
-    <p>Computer Science & Engineering | Aspiring Embedded & Digital Systems Engineer</p>
-  </header>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
+:root {
+  --accent: #5c8df6;
+  --background: #fefefe;
+  --text: #1a1a1a;
+  --section-bg: #f5f7fa;
+  --card-bg: #ffffff;
+}
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+body {
+  margin: 0;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    <div class="project-card">
-      <h3>Rock-Paper-Scissors Robotic Hand</h3>
-      <p>Designed an AVR-controlled robotic hand using servos and push-button logic to simulate Rock-Paper-Scissors gameplay. Developed embedded C logic and PWM control for precise hand gestures.</p>
-    </div>
+header {
+  background-color: var(--accent);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
 
-    <div class="project-card">
-      <h3>32-bit ALU in Verilog</h3>
-      <p>Implemented a modular Arithmetic Logic Unit in Verilog supporting ADD, SUB, AND, OR, SLT, and tested using simulation waveforms. Focused on overflow detection and signed operations.</p>
-    </div>
+header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
 
-    <div class="project-card">
-      <h3>Sensor Logger with Web Dashboard</h3>
-      <p>Built a sensor-based data logger using Arduino and Python Flask for real-time visualization. Logged temperature and motion data over time and uploaded to a live dashboard.</p>
-    </div>
-  </section>
+nav {
+  text-align: center;
+  margin-top: 1rem;
+}
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>C/C++, Python, Verilog, HTML/CSS</li>
-      <li>AVR, Arduino, SPI, I2C, PWM</li>
-      <li>Vivado, KiCad, LTSpice, Git</li>
-    </ul>
-  </section>
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
-  </section>
+section {
+  padding: 2rem;
+}
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: samuel.ryoo@uci.edu</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/samuelryoo" target="_blank">linkedin.com/in/samuelryoo</a></p>
-    <p>GitHub: <a href="https://github.com/samuelryoo" target="_blank">github.com/samuelryoo</a></p>
-  </section>
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-  <footer>
-    &copy; 2025 Samuel Ryoo | Engineering Portfolio
-  </footer>
-</body>
-</html>
+.project-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--section-bg);
+  font-size: 0.9rem;
+  color: #666;
+}
