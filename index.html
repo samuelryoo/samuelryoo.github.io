@@ -1,116 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Ryoo | Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Samuel Ryoo</h1>
+    <p>Computer Science & Engineering | Aspiring Embedded & Digital Systems Engineer</p>
+  </header>
 
-:root {
-  --accent: #5c8df6;
-  --background: #fefefe;
-  --text: #1a1a1a;
-  --section-bg: #f5f7fa;
-  --card-bg: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.1);
-}
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-html {
-  scroll-behavior: smooth;
-}
+  <main>
+    <section id="projects">
+      <h2>Featured Projects</h2>
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-}
+      <div class="project-card">
+        <h3>Rock-Paper-Scissors Robotic Hand</h3>
+        <p><strong>Overview:</strong> Designed an AVR-controlled robotic hand using servo motors and push-button input to simulate Rock-Paper-Scissors gameplay.</p>
+        <p><strong>My Role:</strong> Developed the embedded C control logic, configured PWM signals, and handled physical integration of the servo mechanisms.</p>
+        <p><strong>Challenges:</strong> Faced timing and jitter issues with servo control, resolved by rewriting delay loops and tuning duty cycles.</p>
+        <p><strong>Outcome:</strong> Fully functional hand with reliable gesture execution. Learned how low-level control and real-world hardware tolerances interact.</p>
+      </div>
 
-header {
-  background-color: var(--accent);
-  color: white;
-  padding: 2rem 2rem 1rem 2rem;
-  text-align: center;
-  box-shadow: 0 4px 6px var(--shadow);
-}
+      <div class="project-card">
+        <h3>32-bit ALU in Verilog</h3>
+        <p><strong>Overview:</strong> Implemented a modular 32-bit Arithmetic Logic Unit in Verilog supporting ADD, SUB, AND, OR, and SLT operations.</p>
+        <p><strong>My Role:</strong> Wrote structural Verilog code and created a comprehensive testbench using ModelSim.</p>
+        <p><strong>Challenges:</strong> Debugged issues with signed overflow detection and propagation of carry-out signals during subtraction.</p>
+        <p><strong>Outcome:</strong> Passed all simulation cases with clean waveforms. Gained confidence in digital logic debugging and waveform interpretation.</p>
+      </div>
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: 600;
-}
+      <div class="project-card">
+        <h3>Sensor Logger with Web Dashboard</h3>
+        <p><strong>Overview:</strong> Built a real-time sensor data logger using Arduino and Python Flask to visualize temperature and motion data on a browser dashboard.</p>
+        <p><strong>My Role:</strong> Programmed data acquisition over UART serial, wrote a Flask backend, and implemented frontend visualization using simple charts.</p>
+        <p><strong>Challenges:</strong> Managing serial data buffer latency and web server update lag; optimized for lower packet size and async refreshes.</p>
+        <p><strong>Outcome:</strong> Successful end-to-end data pipeline from hardware to web app. Reinforced my skills in full-stack embedded development and UART communication.</p>
+      </div>
+    </section>
 
-nav {
-  background-color: white;
-  text-align: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    <section id="skills">
+      <h2>Technical Skills</h2>
 
-nav a {
-  margin: 0 1.2rem;
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 600;
-  transition: color 0.3s;
-}
+      <div class="project-card">
+        <h3>1. PWM (Pulse Width Modulation)</h3>
+        <p>Used to control servo angles in the robotic hand project. Gained practical experience in adjusting duty cycles for smooth and accurate mechanical movements.</p>
+      </div>
 
-nav a:hover {
-  color: #3a6fe3;
-}
+      <div class="project-card">
+        <h3>2. UART (Serial Communication)</h3>
+        <p>Implemented UART to transmit sensor data from Arduino to a Python Flask web server. Used `Serial.print()` to debug and visualize real-time values.</p>
+      </div>
 
-main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
+      <div class="project-card">
+        <h3>3. I2C (Inter-Integrated Circuit)</h3>
+        <p>Exploring I2C for integrating sensors like accelerometers and OLED displays. Understanding how master-slave devices share data over a shared bus.</p>
+      </div>
+    </section>
 
-section {
-  margin-bottom: 3rem;
-}
+    <section id="resume">
+      <h2>Resume</h2>
+      <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+    </section>
 
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.25rem;
-}
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: samuel.ryoo@uci.edu</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/samuelryoo" target="_blank">linkedin.com/in/samuelryoo</a></p>
+      <p>GitHub: <a href="https://github.com/samuelryoo" target="_blank">github.com/samuelryoo</a></p>
+    </section>
+  </main>
 
-.project-card {
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 12px var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-  margin-top: 0;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: var(--section-bg);
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-}
-
-a {
-  color: var(--accent);
-}
-
-a:hover {
-  text-decoration: underline;
-}
+  <footer>
+    &copy; 2025 Samuel Ryoo | Engineering Portfolio
+  </footer>
+</body>
+</html>
