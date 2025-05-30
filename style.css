@@ -111,11 +111,11 @@ ul {
 
 .project-img {
   display: block;
-  height: 30px;
-  width: 45px;
-  object-fit: cover;
+  height: 200px;
+  width: auto;
   margin: 0 auto 1rem auto;
   border-radius: 12px;
+  object-fit: cover;
   box-shadow: 0 4px 10px var(--shadow);
 }
 
