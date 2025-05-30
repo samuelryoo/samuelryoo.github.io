@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --accent: #5c8df6;
-  --background: #fefefe;
+  --accent: #6c7ab8; /* soft gray-blue */
+  --background: #f0f2f5; /* soft gray background */
   --text: #1a1a1a;
-  --section-bg: #f5f7fa;
+  --section-bg: #e6e9f0;
   --card-bg: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.08);
 }
 
 html {
@@ -36,10 +36,10 @@ header h1 {
 }
 
 nav {
-  background-color: white;
+  background-color: #f9f9fb;
   text-align: center;
   padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #3a6fe3;
+  color: #5566a3;
 }
 
 main {
@@ -85,7 +85,7 @@ h2 {
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .project-card h3 {
@@ -103,8 +103,8 @@ footer {
   padding: 1.5rem;
   background-color: var(--section-bg);
   font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
+  color: #555;
+  border-top: 1px solid #ccc;
 }
 
 a {
