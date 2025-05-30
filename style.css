@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --accent: #88a2cd;
+  --accent: #5c8df6;
   --background: #fefefe;
   --text: #1a1a1a;
   --section-bg: #f5f7fa;
   --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
@@ -19,49 +24,93 @@ body {
 header {
   background-color: var(--accent);
   color: white;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   text-align: center;
+  box-shadow: 0 4px 6px var(--shadow);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
 nav {
+  background-color: white;
   text-align: center;
-  margin-top: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
-  margin: 0 1rem;
+  margin: 0 1.2rem;
   text-decoration: none;
   color: var(--accent);
   font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #3a6fe3;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
 section {
-  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.25rem;
 }
 
 .project-card {
   background-color: var(--card-bg);
   border-radius: 12px;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
   margin-top: 0;
   color: var(--accent);
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--section-bg);
   font-size: 0.9rem;
   color: #666;
+  border-top: 1px solid #ddd;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
 }
