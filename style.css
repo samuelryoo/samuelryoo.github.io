@@ -117,31 +117,38 @@ a:hover {
 
 #skills {
   padding: 2em;
-  background-color: #f8f9fa;
+  background-color: #f3f4f6;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5em;
-  margin-top: 1em;
+  justify-content: center;
 }
 
 .skill-card {
-  background: white;
-  border: 1px solid #dee2e6;
+  flex: 1 1 320px;
+  max-width: 400px;
+  min-height: 180px; /* Sets equal box height */
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   border-radius: 12px;
-  padding: 1.2em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
+  padding: 1.4em 1.6em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .skill-card h3 {
   margin-top: 0;
-  color: #005f99;
+  color: #1f2937;
 }
+
 
