@@ -152,4 +152,16 @@ a:hover {
   color: #1f2937;
 }
 
+.project-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
 ~
