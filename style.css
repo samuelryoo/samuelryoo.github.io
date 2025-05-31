@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');More actions
 
-:root {More actions
+:root {
   --accent: #6c7ab8; /* soft gray-blue */
   --background: #f0f2f5; /* soft gray background */
   --text: #1a1a1a;
@@ -31,6 +31,7 @@ header {
 
 header h1 {
   margin: 0;
+  font-size: 2.5rem;
   font-size: 3.0rem;
   font-weight: 600;
 }
@@ -96,26 +97,6 @@ h2 {
 
 ul {
   padding-left: 1.5rem;
-}
-
-.project-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-
-.project-text {
-  flex: 1 1 55%;
-}
-
-.project-img {
-  flex: 1 1 40%;
-  max-height: 160px;
-  width: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px var(--shadow);
-  object-fit: cover;
 }
 
 footer {
