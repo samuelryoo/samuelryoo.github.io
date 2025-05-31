@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');More actions
 
 :root {
-  --accent: #6c7ab8; /* soft gray-blue */
-  --background: #f0f2f5; /* soft gray background */
+  --accent: #6c7ab8;
+  --background: #f0f2f5;
   --text: #1a1a1a;
   --section-bg: #e6e9f0;
   --card-bg: #ffffff;
