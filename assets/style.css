@@ -134,3 +134,37 @@ h2::after{
 
 /* Links hover toward the blue */
 a:hover{ color: #37567f; }
+
+/* ---- Project page helpers ---- */
+.project-hero {
+  display: grid; gap: 14px; margin: 10px 0 18px;
+}
+.project-meta { display:flex; flex-wrap:wrap; gap:10px; margin: 2px 0 8px; }
+.badge {
+  font-size:.9rem; padding:6px 10px; border:1px solid var(--border);
+  border-radius:999px; background:#fff; white-space:nowrap;
+}
+
+.gallery {
+  display:grid; gap:12px; margin: 18px 0 6px;
+  grid-template-columns: repeat(12, 1fr);
+}
+.gallery__item { position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--border); background:#fff; }
+.gallery__img {
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.gallery .span-12 { grid-column: span 12; aspect-ratio: 16/8; }
+.gallery .span-6  { grid-column: span 6;  aspect-ratio: 16/10; }
+.gallery .span-4  { grid-column: span 4;  aspect-ratio: 4/3; }
+
+.info-grid {
+  display:grid; gap:16px; margin-top:18px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+.info-grid .card h3 { margin-top:0 }
+.info-grid ul { margin: 6px 0 0 18px }
+@media (max-width: 860px){
+  .info-grid { grid-template-columns:1fr }
+  .gallery .span-6, .gallery .span-4, .gallery .span-12 { grid-column: span 12; }
+}
+
