@@ -23,29 +23,38 @@
 </header>
 
 <main class="container">
-  <section class="hero-split section">
-    <div>
-      <h1 class="project-title">Simon Game</h1>
-      <p class="project-sub">Microcontroller memory game with keypad, LCD, tones, and non-blocking logic.</p>
-      <div class="project-meta">
-        <span class="badge">Firmware</span><span class="badge">UX</span><span class="badge">Timing</span>
-      </div>
+  <!-- HERO STACK -->
+  <section class="hero-stack">
+    <h1 class="project-title">Simon Game</h1>
+    <p class="project-sub">Microcontroller memory game with keypad, LCD, LEDs, tones, and non-blocking timing.</p>
+    <div class="project-meta">
+      <span class="badge">Firmware</span>
+      <span class="badge">UX</span>
+      <span class="badge">Timing</span>
     </div>
-    <div class="hero-media">
+
+    <div class="hero-image">
+      <!-- Add your image at /images/simon-hero.jpg -->
       <!-- <img src="../../images/simon-hero.jpg" alt="Simon hardware"> -->
     </div>
   </section>
 
-  <section class="soft-block section">
-    <p><span class="soft-label">Skills learned:</span> non-blocking timing, input debouncing, LCD and tone control.</p>
-    <p><span class="soft-label">My role:</span> pattern generation, audio feedback, keypad handler, LCD output.</p>
-    <p><span class="soft-label">Challenges:</span> juggling display/audio while handling inputs under tight timing.</p>
-    <p><span class="soft-label">Outcome:</span> fully playable game with stable timing and a clean user flow.</p>
+  <!-- DETAILS -->
+  <section class="soft-block prose">
+    <p><strong class="soft-label">Skills learned</strong> non-blocking scheduling, input debouncing, LCD rendering, and tone generation with strict timing budgets.</p>
+    <p><strong class="soft-label">My role</strong> implemented pattern generation, keypad handling, audio feedback, and LCD output while keeping the game loop responsive.</p>
+    <p><strong class="soft-label">Challenges</strong> balancing display/audio updates with user input handling, and ensuring consistent difficulty pacing across sequences.</p>
+    <p><strong class="soft-label">Outcome</strong> a fully playable, stable game with clear user feedback and a smooth interaction flow.</p>
   </section>
 
-  <section class="gallery section">
-    <div class="gallery__item span-6"><!-- <img class="gallery__img" src="../../images/simon-lcd.jpg" alt="LCD output"> --></div>
-    <div class="gallery__item span-6"><!-- <img class="gallery__img" src="../../images/simon-board.jpg" alt="Board layout"> --></div>
+  <!-- OPTIONAL: secondary images -->
+  <section class="gallery">
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/simon-lcd.jpg" alt="LCD output"> -->
+    </div>
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/simon-board.jpg" alt="Board layout"> -->
+    </div>
   </section>
 </main>
 
