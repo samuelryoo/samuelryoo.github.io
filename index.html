@@ -34,7 +34,10 @@
           <a class="btn btn--ghost" href="resume.html">Resume</a>
         </div>
       </div>
-      <img class="hero__photo" src="assets/me.jpg" alt="Photo of Samuel Ryoo" />
+      <!-- Safe placeholder until you add me.jpg -->
+      <img class="hero__photo" alt="Portrait placeholder"
+           src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><rect width='100%25' height='100%25' fill='#f3f4f6'/><circle cx='256' cy='200' r='100' fill='#d1d5db'/><rect x='96' y='320' width='320' height='140' rx='70' fill='#e5e7eb'/></svg>" />
+      <!-- Later swap to: src="assets/me.jpg" -->
     </section>
 
     <section class="cards">
@@ -46,4 +49,14 @@
         <h2>How I work</h2>
         <p>Simple interfaces, measurable results, documented builds, reproducible setups.</p>
       </article>
-      <article class
+      <article class="card">
+        <h2>Now</h2>
+        <p>Exploring RTOS, sensor fusion, and telemetry pipelines for robotics.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
+  <script src="assets/main.js"></script>
+</body>
+</html>
