@@ -9,93 +9,93 @@
   <link rel="stylesheet" href="../../assets/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../../index.html">Samuel Ryoo</a>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-    <nav class="nav" aria-label="Primary">
-      <ul id="nav-list" class="nav__list">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../projects.html" aria-current="page">Projects</a></li>
-        <li><a href="../../resume.html">Resume</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <a class="brand" href="../../index.html">Samuel Ryoo</a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+  <nav class="nav" aria-label="Primary">
+    <ul id="nav-list" class="nav__list">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../projects.html" aria-current="page">Projects</a></li>
+      <li><a href="../../resume.html">Resume</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="container">
-    <div class="project-hero">
-      <h1>RISC-V CPU (RV32I)</h1>
-      <div class="project-meta">
-        <span class="badge">Verilog</span>
-        <span class="badge">ModelSim</span>
-        <span class="badge">Digital Design</span>
-      </div>
+<main class="container">
+  <section class="project-hero">
+    <h1 class="project-title">RISC-V CPU (RV32I)</h1>
+    <p class="project-sub">Single-cycle 32-bit core designed in Verilog with testbenches and clean interfaces.</p>
+    <div class="project-meta">
+      <span class="badge">Verilog</span><span class="badge">ModelSim</span>
+      <span class="badge">CPU</span><span class="badge">Digital Design</span>
     </div>
+  </section>
 
-    <!-- Gallery (replace src with your images in /images) -->
-    <section class="gallery">
-      <!-- Big hero -->
-      <div class="gallery__item span-12">
-        <!-- <img class="gallery__img" src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
-      </div>
-      <!-- Smaller slots -->
-      <div class="gallery__item span-6">
-        <!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath diagram"> -->
-      </div>
-      <div class="gallery__item span-6">
-        <!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Simulation waveforms"> -->
-      </div>
-    </section>
+  <!-- Gallery -->
+  <section class="gallery section">
+    <div class="gallery__item span-12">
+      <!-- <img class="gallery__img" src="../../images/riscv-hero.jpg" alt="RISC-V overview"> -->
+    </div>
+    <div class="gallery__item span-8">
+      <!-- <img class="gallery__img" src="../../images/riscv-datapath.jpg" alt="Datapath diagram"> -->
+    </div>
+    <div class="gallery__item span-4">
+      <!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Simulation waveforms"> -->
+    </div>
+  </section>
 
-    <!-- Info blocks -->
-    <section class="info-grid">
-      <article class="card">
-        <h3>Skills Learned</h3>
-        <ul>
-          <li><!-- e.g., Pipeline tradeoffs, ALU flags, hazard thinking --></li>
-          <li></li>
-        </ul>
-      </article>
+  <!-- Info -->
+  <section class="info-grid section">
+    <article class="card">
+      <h3>Skills Learned</h3>
+      <ul>
+        <li><!-- ALU flags, control vs datapath separation --></li>
+        <li><!-- Instruction decode & immediate formats --></li>
+        <li><!-- Testbenching & waveform-driven debugging --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Why this matters for Systems Engineering (Northrop)</h3>
-        <ul>
-          <li><!-- e.g., requirements → architecture → verification traceability --></li>
-          <li><!-- e.g., testbench rigor, interface definition, failure modes --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Systems Proof</h3>
+      <ul>
+        <li><!-- Requirements → modules → verification trace (spec-to-test mapping) --></li>
+        <li><!-- Stable interfaces; clear contracts between units --></li>
+        <li><!-- Failure modes considered (overflow, invalid opcodes) --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>My Role</h3>
-        <ul>
-          <li><!-- e.g., designed datapath/control, wrote testbenches --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>My Role</h3>
+      <ul>
+        <li><!-- Designed datapath & control; wrote testbenches --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Challenges</h3>
-        <ul>
-          <li><!-- e.g., signed overflow detection, carry/borrow propagation --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Challenges</h3>
+      <ul>
+        <li><!-- Signed overflow/borrow propagation; timing of flags --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Outcome</h3>
-        <ul>
-          <li><!-- e.g., passed all simulation cases; clean waveforms; repo link --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Outcome</h3>
+      <ul>
+        <li><!-- All tests passing; clean waveforms; lessons learned --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Notes / Links</h3>
-        <ul>
-          <li><!-- e.g., GitHub repo, report PDF, demo video --></li>
-        </ul>
-      </article>
-    </section>
-  </main>
+    <article class="card">
+      <h3>Notes / Links</h3>
+      <ul>
+        <li><!-- Repo link, report PDF, demo video --></li>
+      </ul>
+    </article>
+  </section>
+</main>
 
-  <footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
-  <script src="../../assets/main.js"></script>
+<footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
+<script src="../../assets/main.js"></script>
 </body>
 </html>
