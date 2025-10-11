@@ -23,75 +23,30 @@
 </header>
 
 <main class="container">
-  <section class="project-hero">
-    <h1 class="project-title">RISC-V CPU (RV32I)</h1>
-    <p class="project-sub">Single-cycle 32-bit core designed in Verilog with testbenches and clean interfaces.</p>
-    <div class="project-meta">
-      <span class="badge">Verilog</span><span class="badge">ModelSim</span>
-      <span class="badge">CPU</span><span class="badge">Digital Design</span>
+  <section class="hero-split section">
+    <div>
+      <h1 class="project-title">RISC-V CPU (RV32I)</h1>
+      <p class="project-sub">Single-cycle 32-bit core designed in Verilog with testbenches and clean interfaces.</p>
+      <div class="project-meta">
+        <span class="badge">Verilog</span><span class="badge">ModelSim</span><span class="badge">CPU</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V overview"> -->
     </div>
   </section>
 
-  <!-- Gallery -->
+  <section class="soft-block section">
+    <p><span class="soft-label">Skills learned:</span> ALU flags, control vs. datapath separation, instruction decode & immediate formats, waveform-driven debugging.</p>
+    <p><span class="soft-label">My role:</span> designed datapath/control and wrote testbenches.</p>
+    <p><span class="soft-label">Challenges:</span> signed overflow/borrow, timing of flags, interface contracts.</p>
+    <p><span class="soft-label">Outcome:</span> all tests passing with clean waveforms and documented modules.</p>
+  </section>
+
   <section class="gallery section">
-    <div class="gallery__item span-12">
-      <!-- <img class="gallery__img" src="../../images/riscv-hero.jpg" alt="RISC-V overview"> -->
-    </div>
-    <div class="gallery__item span-8">
-      <!-- <img class="gallery__img" src="../../images/riscv-datapath.jpg" alt="Datapath diagram"> -->
-    </div>
-    <div class="gallery__item span-4">
-      <!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Simulation waveforms"> -->
-    </div>
-  </section>
-
-  <!-- Info -->
-  <section class="info-grid section">
-    <article class="card">
-      <h3>Skills Learned</h3>
-      <ul>
-        <li><!-- ALU flags, control vs datapath separation --></li>
-        <li><!-- Instruction decode & immediate formats --></li>
-        <li><!-- Testbenching & waveform-driven debugging --></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Systems Proof</h3>
-      <ul>
-        <li><!-- Requirements → modules → verification trace (spec-to-test mapping) --></li>
-        <li><!-- Stable interfaces; clear contracts between units --></li>
-        <li><!-- Failure modes considered (overflow, invalid opcodes) --></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>My Role</h3>
-      <ul>
-        <li><!-- Designed datapath & control; wrote testbenches --></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Challenges</h3>
-      <ul>
-        <li><!-- Signed overflow/borrow propagation; timing of flags --></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Outcome</h3>
-      <ul>
-        <li><!-- All tests passing; clean waveforms; lessons learned --></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Notes / Links</h3>
-      <ul>
-        <li><!-- Repo link, report PDF, demo video --></li>
-      </ul>
-    </article>
+    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath"> --></div>
+    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Waveforms"> --></div>
+    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-diagram-2.jpg" alt="Control"> --></div>
   </section>
 </main>
 
