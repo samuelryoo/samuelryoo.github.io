@@ -23,11 +23,91 @@
   </header>
 
   <main class="container">
-    <h1>Contact</h1>
-    <section class="cards small">
-      <a class="card card--link" href="mailto:1002samryoo@gmail.com">1002samryoo@gmail.com</a>
-      <a class="card card--link" href="https://www.linkedin.com/in/samuelryoo" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="card card--link" href="https://github.com/samuelryoo" target="_blank" rel="noopener">GitHub</a>
+    <h1>Get in touch</h1>
+    <p class="lead" style="margin-top:-6px">I’m open to systems/embedded roles, internships, and interesting hardware projects.</p>
+
+    <!-- contact grid -->
+    <section class="contact-grid">
+      <!-- Left column -->
+      <article class="card">
+        <h2 style="margin-top:0">Say hello</h2>
+        <p>Email is best. I usually reply within a day.</p>
+
+        <div class="stack">
+          <a class="btn" href="mailto:1002samryoo@gmail.com">Email me</a>
+
+          <div class="copy-row">
+            <code id="email-text">1002samryoo@gmail.com</code>
+            <button class="btn btn--ghost btn-copy" data-copy="#email-text" aria-label="Copy email">Copy</button>
+          </div>
+        </div>
+
+        <h3 style="margin:18px 0 6px">What I’m open to</h3>
+        <ul class="tags">
+          <li>Systems Engineering</li>
+          <li>Embedded/Firmware</li>
+          <li>Digital Design (Verilog)</li>
+          <li>Robotics</li>
+          <li>Internships</li>
+        </ul>
+      </article>
+
+      <!-- Right column -->
+      <article class="card">
+        <h2 style="margin-top:0">Elsewhere</h2>
+        <ul class="social-list">
+          <li>
+            <a class="social" href="https://github.com/samuelryoo" target="_blank" rel="noopener">
+              <span class="social__icon" aria-hidden="true">🧰</span>
+              <span class="social__text">
+                <strong>GitHub</strong>
+                <small>github.com/samuelryoo</small>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://www.linkedin.com/in/samuelryoo/" target="_blank" rel="noopener">
+              <span class="social__icon" aria-hidden="true">🔗</span>
+              <span class="social__text">
+                <strong>LinkedIn</strong>
+                <small>linkedin.com/in/samuelryoo</small>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="social" href="resume.html">
+              <span class="social__icon" aria-hidden="true">📄</span>
+              <span class="social__text">
+                <strong>Resume</strong>
+                <small>View / download PDF</small>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Optional simple form (disabled by default) -->
+      <article class="card">
+        <h2 style="margin-top:0">Quick note (optional)</h2>
+        <p>Prefer a form? You can enable this with Formspree—no backend needed.</p>
+        <form id="contact-form" class="contact-form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send</button>
+          <p class="form-note">This demo posts nowhere until you add your Formspree endpoint.</p>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </article>
     </section>
   </main>
 
