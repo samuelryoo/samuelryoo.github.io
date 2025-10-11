@@ -9,92 +9,88 @@
   <link rel="stylesheet" href="../../assets/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../../index.html">Samuel Ryoo</a>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-    <nav class="nav" aria-label="Primary">
-      <ul id="nav-list" class="nav__list">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../projects.html" aria-current="page">Projects</a></li>
-        <li><a href="../../resume.html">Resume</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <a class="brand" href="../../index.html">Samuel Ryoo</a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+  <nav class="nav" aria-label="Primary">
+    <ul id="nav-list" class="nav__list">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../projects.html" aria-current="page">Projects</a></li>
+      <li><a href="../../resume.html">Resume</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="container">
-    <div class="project-hero">
-      <h1>Robot Arm</h1>
-      <div class="project-meta">
-        <span class="badge">C/C++</span>
-        <span class="badge">Embedded</span>
-        <span class="badge">Control</span>
-      </div>
+<main class="container">
+  <section class="project-hero">
+    <h1 class="project-title">Robot Arm</h1>
+    <p class="project-sub">Multi-DOF arm with servo control; kinematics, timing, and embedded control loops.</p>
+    <div class="project-meta">
+      <span class="badge">Embedded</span><span class="badge">C/C++</span><span class="badge">Control</span>
     </div>
+  </section>
 
-    <section class="gallery">
-      <div class="gallery__item span-12">
-        <!-- <img class="gallery__img" src="../../images/robot-arm-hero.jpg" alt="Robot arm hero"> -->
-      </div>
-      <div class="gallery__item span-4">
-        <!-- <img class="gallery__img" src="../../images/robot-arm-detail-1.jpg" alt="Joint detail"> -->
-      </div>
-      <div class="gallery__item span-4">
-        <!-- <img class="gallery__img" src="../../images/robot-arm-detail-2.jpg" alt="Electronics"> -->
-      </div>
-      <div class="gallery__item span-4">
-        <!-- <img class="gallery__img" src="../../images/robot-arm-detail-3.jpg" alt="Control UI"> -->
-      </div>
-    </section>
+  <section class="gallery section">
+    <div class="gallery__item span-12">
+      <!-- <img class="gallery__img" src="../../images/robot-arm-hero.jpg" alt="Robot arm overview"> -->
+    </div>
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/robot-arm-detail-1.jpg" alt="Joint detail"> -->
+    </div>
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/robot-arm-detail-2.jpg" alt="Electronics"> -->
+    </div>
+  </section>
 
-    <section class="info-grid">
-      <article class="card">
-        <h3>Skills Learned</h3>
-        <ul>
-          <li><!-- e.g., PWM/servo timing, stepper drivers, jitter mitigation --></li>
-          <li></li>
-        </ul>
-      </article>
+  <section class="info-grid section">
+    <article class="card">
+      <h3>Skills Learned</h3>
+      <ul>
+        <li><!-- PWM/servo timing; stepper drivers; jitter mitigation --></li>
+        <li><!-- Basic kinematics; motion profiles --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Why this matters for Systems Engineering (Northrop)</h3>
-        <ul>
-          <li><!-- e.g., hardware/software integration, interface control docs --></li>
-          <li><!-- e.g., test plans, safety/limits, failure handling --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Systems Proof</h3>
+      <ul>
+        <li><!-- Interface control between power, drivers, firmware --></li>
+        <li><!-- Test plan for range/torque/latency; limit/safety checks --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>My Role</h3>
-        <ul>
-          <li><!-- e.g., embedded control logic, PWM config, physical integration --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>My Role</h3>
+      <ul>
+        <li><!-- Embedded control logic; PWM config; physical integration --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Challenges</h3>
-        <ul>
-          <li><!-- e.g., timing jitter, torque vs speed tradeoffs --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Challenges</h3>
+      <ul>
+        <li><!-- Timing jitter; torque vs speed tradeoffs; heat --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Outcome</h3>
-        <ul>
-          <li><!-- e.g., reliable multi-gesture execution; demo link --></li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Outcome</h3>
+      <ul>
+        <li><!-- Reliable motion execution; repeatable demo --></li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Notes / Links</h3>
-        <ul>
-          <li><!-- e.g., code repo, BOM, schematic, video --></li>
-        </ul>
-      </article>
-    </section>
-  </main>
+    <article class="card">
+      <h3>Notes / Links</h3>
+      <ul>
+        <li><!-- Repo, BOM, schematic, demo video --></li>
+      </ul>
+    </article>
+  </section>
+</main>
 
-  <footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
-  <script src="../../assets/main.js"></script>
+<footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
+<script src="../../assets/main.js"></script>
 </body>
 </html>
