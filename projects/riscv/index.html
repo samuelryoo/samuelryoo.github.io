@@ -23,30 +23,39 @@
 </header>
 
 <main class="container">
-  <section class="hero-split section">
-    <div>
-      <h1 class="project-title">RISC-V CPU (RV32I)</h1>
-      <p class="project-sub">Single-cycle 32-bit core designed in Verilog with testbenches and clean interfaces.</p>
-      <div class="project-meta">
-        <span class="badge">Verilog</span><span class="badge">ModelSim</span><span class="badge">CPU</span>
-      </div>
+  <!-- HERO STACK -->
+  <section class="hero-stack">
+    <h1 class="project-title">RISC-V CPU (RV32I)</h1>
+    <p class="project-sub">Single-cycle 32-bit core designed in Verilog with clean interfaces and thorough testbenches.</p>
+    <div class="project-meta">
+      <span class="badge">Verilog</span>
+      <span class="badge">ModelSim</span>
+      <span class="badge">CPU</span>
+      <span class="badge">Digital Design</span>
     </div>
-    <div class="hero-media">
-      <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V overview"> -->
+
+    <div class="hero-image">
+      <!-- Add your image at /images/riscv-hero.jpg -->
+      <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
     </div>
   </section>
 
-  <section class="soft-block section">
-    <p><span class="soft-label">Skills learned:</span> ALU flags, control vs. datapath separation, instruction decode & immediate formats, waveform-driven debugging.</p>
-    <p><span class="soft-label">My role:</span> designed datapath/control and wrote testbenches.</p>
-    <p><span class="soft-label">Challenges:</span> signed overflow/borrow, timing of flags, interface contracts.</p>
-    <p><span class="soft-label">Outcome:</span> all tests passing with clean waveforms and documented modules.</p>
+  <!-- DETAILS -->
+  <section class="soft-block prose">
+    <p><strong class="soft-label">Skills learned</strong> control vs. datapath separation, ALU flags and condition handling, instruction decode & immediate formats, and waveform-driven debugging with systematic testbenching.</p>
+    <p><strong class="soft-label">My role</strong> architected the datapath and control modules, implemented RV32I ops, and authored testbenches to validate each unit and integration behavior.</p>
+    <p><strong class="soft-label">Challenges</strong> correct signed overflow/borrow propagation and flag timing, coordinating module boundaries to keep interfaces stable while iterating on internals.</p>
+    <p><strong class="soft-label">Outcome</strong> all tests pass with clean waveforms; the design is modular, documented, and easy to extend with pipeline or peripheral interfaces later.</p>
   </section>
 
-  <section class="gallery section">
-    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath"> --></div>
-    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Waveforms"> --></div>
-    <div class="gallery__item span-4"><!-- <img class="gallery__img" src="../../images/riscv-diagram-2.jpg" alt="Control"> --></div>
+  <!-- OPTIONAL: secondary images -->
+  <section class="gallery">
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath diagram"> -->
+    </div>
+    <div class="gallery__item span-6">
+      <!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Simulation waveforms"> -->
+    </div>
   </section>
 </main>
 
