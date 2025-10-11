@@ -1,44 +1,49 @@
 <!doctype html>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samuel Ryoo — Home</title>
+  <meta name="description" content="Portfolio of Samuel Ryoo — projects, resume, and contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>S</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Samuel Ryoo</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <nav class="nav" aria-label="Primary">
+      <ul id="nav-list" class="nav__list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="container">
+    <section class="hero">
+      <div class="hero__copy">
+        <h1>Hi, I’m Samuel.</h1>
+        <p class="lead">I build embedded & digital systems—cleanly engineered, thoughtfully shipped.</p>
+        <div class="cta">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn btn--ghost" href="resume.html">Resume</a>
+        </div>
+      </div>
+      <img class="hero__photo" src="assets/me.jpg" alt="Photo of Samuel Ryoo" />
+    </section>
 
-<main class="container">
-<section class="hero">
-<div class="hero__copy">
-<h1>Hi, I’m Samuel.</h1>
-<p class="lead">I build embedded & digital systems—cleanly engineered, thoughtfully shipped.</p>
-<div class="cta">
-<a class="btn" href="projects.html">View Projects</a>
-<a class="btn btn--ghost" href="resume.html">Resume</a>
-</div>
-</div>
-<img class="hero__photo" src="assets/me.jpg" alt="Photo of Samuel Ryoo" />
-</section>
-
-
-<section class="cards">
-<article class="card">
-<h2>What I do</h2>
-<p>Embedded C/C++, Verilog, MCU bring-up, and control systems. I like the seam where hardware meets software.</p>
-</article>
-<article class="card">
-<h2>How I work</h2>
-<p>Simple interfaces, iterative delivery, measurable results. Documented builds, reproducible setups.</p>
-</article>
-<article class="card">
-<h2>Now</h2>
-<p>Exploring RTOS, sensor fusion, and telemetry pipelines for robotics.</p>
-</article>
-</section>
-</main>
-
-
-<footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
-<script src="assets/main.js"></script>
-</body>
-</html>
+    <section class="cards">
+      <article class="card">
+        <h2>What I do</h2>
+        <p>Embedded C/C++, Verilog, MCU bring-up, control systems, and tooling.</p>
+      </article>
+      <article class="card">
+        <h2>How I work</h2>
+        <p>Simple interfaces, measurable results, documented builds, reproducible setups.</p>
+      </article>
+      <article class
