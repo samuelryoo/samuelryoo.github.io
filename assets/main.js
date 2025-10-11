@@ -12,4 +12,8 @@
       toggle.setAttribute('aria-expanded', String(open));
     });
   }
+
+  // Hide hero image if it fails (until you add assets/me.jpg)
+  const img = document.querySelector('.hero__photo');
+  if (img) img.addEventListener('error', () => { img.style.display = 'none'; });
 })();
