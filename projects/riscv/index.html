@@ -23,31 +23,29 @@
 </header>
 
 <main class="container">
-  <!-- HERO STACK -->
+  <!-- title + subtitle + badges -->
   <section class="hero-stack">
     <h1 class="project-title">RISC-V CPU (RV32I)</h1>
     <p class="project-sub">Single-cycle 32-bit core designed in Verilog with clean interfaces and thorough testbenches.</p>
-
-    <!-- mini skill bubbles -->
     <div class="project-meta">
       <span class="badge">Verilog</span>
       <span class="badge">ModelSim</span>
       <span class="badge">CPU</span>
       <span class="badge">Digital Design</span>
     </div>
-
-    <!-- one large image (below badges, above text) -->
-    <div class="hero-image">
-      <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
-    </div>
   </section>
 
-  <!-- flowing paragraph (no label bubbles) -->
-  <section class="soft-block prose">
+  <!-- one big image (above the paragraph) -->
+  <figure class="hero-image" style="margin-top:16px;">
+    <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
+  </figure>
+
+  <!-- plain paragraph on the page background (no white bubble) -->
+  <section class="prose" style="margin-top:18px;">
     <p>
-      Designed and implemented a modular RV32I single-cycle CPU with a clear separation between datapath and control.  
-      Focused on ALU flags and condition handling, instruction decode and immediate formats, and a disciplined testbench
-      workflow that used waveforms to drive debugging.
+      Designed and implemented a modular RV32I single-cycle CPU with a clear separation between datapath and control.
+      Focused on ALU flags and condition handling, instruction decode and immediate formats, and a disciplined
+      testbench workflow that used waveforms to drive debugging.
     </p>
     <p>
       My contributions included architecting the datapath and control units, implementing core operations, and writing
@@ -58,16 +56,6 @@
       The result is a clean, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
       peripheral interfaces) without breaking existing contracts.
     </p>
-  </section>
-
-  <!-- optional: secondary images -->
-  <section class="gallery">
-    <div class="gallery__item span-6">
-      <!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath diagram"> -->
-    </div>
-    <div class="gallery__item span-6">
-      <!-- <img class="gallery__img" src="../../images/riscv-waveforms.jpg" alt="Simulation waveforms"> -->
-    </div>
   </section>
 </main>
 
