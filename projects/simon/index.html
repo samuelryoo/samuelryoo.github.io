@@ -23,26 +23,24 @@
 </header>
 
 <main class="container">
-  <!-- HERO STACK -->
+  <!-- title + subtitle + badges -->
   <section class="hero-stack">
     <h1 class="project-title">Simon Game</h1>
     <p class="project-sub">Microcontroller memory game with keypad, LCD, LEDs, tones, and non-blocking timing.</p>
-
-    <!-- mini skill bubbles -->
     <div class="project-meta">
       <span class="badge">Firmware</span>
       <span class="badge">UX</span>
       <span class="badge">Timing</span>
     </div>
-
-    <!-- one large image (below badges, above text) -->
-    <div class="hero-image">
-      <!-- <img src="../../images/simon-hero.jpg" alt="Simon hardware"> -->
-    </div>
   </section>
 
-  <!-- flowing paragraph (no label bubbles) -->
-  <section class="soft-block prose">
+  <!-- one big image (above the paragraph) -->
+  <figure class="hero-image" style="margin-top:16px;">
+    <!-- <img src="../../images/simon-hero.jpg" alt="Simon hardware"> -->
+  </figure>
+
+  <!-- plain paragraph on the page background (no white bubble) -->
+  <section class="prose" style="margin-top:18px;">
     <p>
       Built a fully playable Simon game that balances display and audio updates with responsive input handling. The core
       loop is non-blocking, with debounced keypad input, LCD rendering, and tone generation sequenced under tight timing
@@ -57,16 +55,6 @@
       The final build feels snappy and stable, with clear feedback and a simple path to add difficulty levels or new
       modes later.
     </p>
-  </section>
-
-  <!-- optional: secondary images -->
-  <section class="gallery">
-    <div class="gallery__item span-6">
-      <!-- <img class="gallery__img" src="../../images/simon-lcd.jpg" alt="LCD output"> -->
-    </div>
-    <div class="gallery__item span-6">
-      <!-- <img class="gallery__img" src="../../images/simon-board.jpg" alt="Board layout"> -->
-    </div>
   </section>
 </main>
 
