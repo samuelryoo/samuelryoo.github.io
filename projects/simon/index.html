@@ -27,27 +27,39 @@
   <section class="hero-stack">
     <h1 class="project-title">Simon Game</h1>
     <p class="project-sub">Microcontroller memory game with keypad, LCD, LEDs, tones, and non-blocking timing.</p>
+
+    <!-- mini skill bubbles -->
     <div class="project-meta">
       <span class="badge">Firmware</span>
       <span class="badge">UX</span>
       <span class="badge">Timing</span>
     </div>
 
+    <!-- one large image (below badges, above text) -->
     <div class="hero-image">
-      <!-- Add your image at /images/simon-hero.jpg -->
       <!-- <img src="../../images/simon-hero.jpg" alt="Simon hardware"> -->
     </div>
   </section>
 
-  <!-- DETAILS -->
+  <!-- flowing paragraph (no label bubbles) -->
   <section class="soft-block prose">
-    <p><strong class="soft-label">Skills learned</strong> non-blocking scheduling, input debouncing, LCD rendering, and tone generation with strict timing budgets.</p>
-    <p><strong class="soft-label">My role</strong> implemented pattern generation, keypad handling, audio feedback, and LCD output while keeping the game loop responsive.</p>
-    <p><strong class="soft-label">Challenges</strong> balancing display/audio updates with user input handling, and ensuring consistent difficulty pacing across sequences.</p>
-    <p><strong class="soft-label">Outcome</strong> a fully playable, stable game with clear user feedback and a smooth interaction flow.</p>
+    <p>
+      Built a fully playable Simon game that balances display and audio updates with responsive input handling. The core
+      loop is non-blocking, with debounced keypad input, LCD rendering, and tone generation sequenced under tight timing
+      constraints.
+    </p>
+    <p>
+      I implemented pattern generation, keypad handling, audio feedback, and LCD output, aiming for a smooth interaction
+      flow and consistent difficulty pacing across sequences. The main challenge was scheduling peripherals so the UI
+      stayed responsive without starving the game logic.
+    </p>
+    <p>
+      The final build feels snappy and stable, with clear feedback and a simple path to add difficulty levels or new
+      modes later.
+    </p>
   </section>
 
-  <!-- OPTIONAL: secondary images -->
+  <!-- optional: secondary images -->
   <section class="gallery">
     <div class="gallery__item span-6">
       <!-- <img class="gallery__img" src="../../images/simon-lcd.jpg" alt="LCD output"> -->
