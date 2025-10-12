@@ -27,6 +27,8 @@
   <section class="hero-stack">
     <h1 class="project-title">RISC-V CPU (RV32I)</h1>
     <p class="project-sub">Single-cycle 32-bit core designed in Verilog with clean interfaces and thorough testbenches.</p>
+
+    <!-- mini skill bubbles -->
     <div class="project-meta">
       <span class="badge">Verilog</span>
       <span class="badge">ModelSim</span>
@@ -34,21 +36,31 @@
       <span class="badge">Digital Design</span>
     </div>
 
+    <!-- one large image (below badges, above text) -->
     <div class="hero-image">
-      <!-- Add your image at /images/riscv-hero.jpg -->
       <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
     </div>
   </section>
 
-  <!-- DETAILS -->
+  <!-- flowing paragraph (no label bubbles) -->
   <section class="soft-block prose">
-    <p><strong class="soft-label">Skills learned</strong> control vs. datapath separation, ALU flags and condition handling, instruction decode & immediate formats, and waveform-driven debugging with systematic testbenching.</p>
-    <p><strong class="soft-label">My role</strong> architected the datapath and control modules, implemented RV32I ops, and authored testbenches to validate each unit and integration behavior.</p>
-    <p><strong class="soft-label">Challenges</strong> correct signed overflow/borrow propagation and flag timing, coordinating module boundaries to keep interfaces stable while iterating on internals.</p>
-    <p><strong class="soft-label">Outcome</strong> all tests pass with clean waveforms; the design is modular, documented, and easy to extend with pipeline or peripheral interfaces later.</p>
+    <p>
+      Designed and implemented a modular RV32I single-cycle CPU with a clear separation between datapath and control.  
+      Focused on ALU flags and condition handling, instruction decode and immediate formats, and a disciplined testbench
+      workflow that used waveforms to drive debugging.
+    </p>
+    <p>
+      My contributions included architecting the datapath and control units, implementing core operations, and writing
+      unit/integration testbenches to validate correctness across edge cases. The trickiest issues were signed
+      overflow/borrow propagation and getting flag timing correct while keeping module boundaries stable.
+    </p>
+    <p>
+      The result is a clean, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
+      peripheral interfaces) without breaking existing contracts.
+    </p>
   </section>
 
-  <!-- OPTIONAL: secondary images -->
+  <!-- optional: secondary images -->
   <section class="gallery">
     <div class="gallery__item span-6">
       <!-- <img class="gallery__img" src="../../images/riscv-diagram-1.jpg" alt="Datapath diagram"> -->
