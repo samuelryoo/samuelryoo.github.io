@@ -35,39 +35,40 @@
     </div>
   </section>
 
-  <figure class="hero-image" style="margin-top:16px;">
-    <img
-      src="../../images/riscv.jpg"
-      alt="RISC-V CPU datapath overview"
-      width="1600" height="900"
-      loading="lazy" decoding="async"
-    />
+  <figure class="hero-media" style="margin-top:16px;">
+    <video
+      class="hero-media__video"
+      src="../../videos/simon-demo.mp4"
+      poster="../../images/simon.jpg"
+      controls
+      playsinline
+    >
+      Sorry, your browser can’t play this video.
+    </video>
   </figure>
-  
+
+  <!-- text with two portrait images on the right -->
   <section class="project-body">
     <div class="prose">
       <p>
-        Designed and implemented a modular RV32I single-cycle CPU with a clean separation between datapath and control.
-        Focus areas: ALU flags/conditions, instruction decode and immediate formats, and a disciplined testbench workflow
-        using waveforms to drive debugging.
+        Built a fully playable Simon game that balances display and audio updates with responsive input handling.
+        The core loop is non-blocking, with debounced keypad input, LCD rendering, and tone generation sequenced under tight timing constraints.
       </p>
       <p>
-        Contributions included architecting datapath/control, implementing core operations, and writing unit/integration
-        testbenches to validate edge cases. Hardest issues: signed overflow/borrow propagation and precise flag timing
-        while keeping module interfaces stable.
+        Implemented pattern generation, keypad handling, audio feedback, and LCD output for a smooth interaction flow and consistent difficulty pacing.
+        Main challenge: scheduling peripherals so the UI stayed responsive without starving the game logic.
       </p>
       <p>
-        Result: a tidy, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
-        peripherals) without breaking existing contracts.
+        The final build is snappy and stable, with clear feedback and a simple path to add difficulty levels or new modes.
       </p>
     </div>
-  
+
     <aside class="side-gallery">
       <figure class="side-photo">
-        <img src="../../images/riscv-1.jpg" alt="RISC-V datapath diagram" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="../../images/simon-1.jpg" alt="Simon keypad and LEDs" width="900" height="1200" loading="lazy" decoding="async" />
       </figure>
       <figure class="side-photo">
-        <img src="../../images/riscv-2.jpg" alt="Simulation waveforms" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="../../images/simon-2.jpg" alt="Simon LCD and board" width="900" height="1200" loading="lazy" decoding="async" />
       </figure>
     </aside>
   </section>
