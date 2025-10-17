@@ -291,8 +291,23 @@ a:hover{ color: #37567f; }
   object-fit:cover;
 }
 
-/* Let a side image be landscape (your simon-2.jpg) */
+/* Make ONLY the landscape side image ~1.35x wider */
+:root { --side-w: 300px; } /* current sidebar width (already ~300 in your grid) */
+
+.project-body{ grid-template-columns: minmax(0,1fr) var(--side-w); }
+
+.side-gallery{ position: relative; }            /* allow controlled overflow */
+.side-photo--landscape{
+  width: calc(var(--side-w) * 1.35);            /* 1.35x wider */
+  justify-self: end;                             /* grow to the right, not over text */
+  overflow: visible;                             /* don't clip the bigger image */
+}
 .side-photo--landscape img{
-  aspect-ratio: 4/3;            /* or 16/10 if you prefer wider */
+  aspect-ratio: 16/10;                             /* landscape shape */
   object-fit: cover;
+}
+
+/* Keep mobile tidy: full width, no overflow */
+@media (max-width: 960px){
+  .side-photo--landscape{ width: 100%; }
 }
