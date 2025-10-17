@@ -26,35 +26,47 @@
   <!-- title + subtitle + badges -->
   <section class="hero-stack">
     <h1 class="project-title">Simon Game</h1>
-    <p class="project-sub">Microcontroller memory game with keypad, LCD, LEDs, tones, and non-blocking timing.</p>
+    <p class="project-sub">Interactive visual/audio memorization game, using the AVR RISC-V microcontroller (AT32Mega).</p>
     <div class="project-meta">
-      <span class="badge">Firmware</span>
-      <span class="badge">UX</span>
-      <span class="badge">Timing</span>
+      <span class="badge">C/C++</span>
+      <span class="badge">Embedded Systems</span>
+      <span class="badge">Soldering</span>
+      <span class="badge">KiCad</span>
     </div>
   </section>
 
-  <!-- one big image (above the paragraph) -->
   <figure class="hero-image" style="margin-top:16px;">
-    <!-- <img src="../../images/simon-hero.jpg" alt="Simon hardware"> -->
+    <img
+      src="../../images/simon-hero.jpg"
+      alt="Simon game hardware"
+      width="1600" height="900"
+      loading="lazy" decoding="async"
+    />
   </figure>
-
-  <!-- plain paragraph on the page background (no white bubble) -->
-  <section class="prose" style="margin-top:18px;">
-    <p>
-      Built a fully playable Simon game that balances display and audio updates with responsive input handling. The core
-      loop is non-blocking, with debounced keypad input, LCD rendering, and tone generation sequenced under tight timing
-      constraints.
-    </p>
-    <p>
-      I implemented pattern generation, keypad handling, audio feedback, and LCD output, aiming for a smooth interaction
-      flow and consistent difficulty pacing across sequences. The main challenge was scheduling peripherals so the UI
-      stayed responsive without starving the game logic.
-    </p>
-    <p>
-      The final build feels snappy and stable, with clear feedback and a simple path to add difficulty levels or new
-      modes later.
-    </p>
+  
+  <section class="project-body">
+    <div class="prose">
+      <p>
+        Built a fully playable Simon game that balances display and audio updates with responsive input handling.
+        The core loop is non-blocking, with debounced keypad input, LCD rendering, and tone generation sequenced under tight timing constraints.
+      </p>
+      <p>
+        Implemented pattern generation, keypad handling, audio feedback, and LCD output for a smooth interaction flow and consistent difficulty pacing.
+        Main challenge: scheduling peripherals so the UI stayed responsive without starving the game logic.
+      </p>
+      <p>
+        The final build is snappy and stable, with clear feedback and a simple path to add difficulty levels or new modes.
+      </p>
+    </div>
+  
+    <aside class="side-gallery">
+      <figure class="side-photo">
+        <img src="../../images/simon-1.jpg" alt="Simon keypad and LEDs" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="side-photo">
+        <img src="../../images/simon-2.jpg" alt="Simon LCD and board" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+    </aside>
   </section>
 </main>
 
