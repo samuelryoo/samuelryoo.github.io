@@ -124,3 +124,33 @@ h2::after{
 
 /* Footer */
 .site-footer{border-top:1px solid var(--border);padding:22px 18px;color:var(--muted);
+
+/* === Quick fixes === */
+
+/* A) Make the Simon video hero smaller */
+:root { --hero-max: 820px; }          /* optional: matches your PDF/image hero width */
+.hero-media--sm { max-width: 760px; } /* per-page smaller video */
+.hero-media--sm .hero-media__video{
+  aspect-ratio: 16/10;                /* a bit less tall than 16/9 */
+  max-height: 50vh;                   /* never taller than half the viewport */
+}
+
+/* B) Stabilize the side column so images don't go weird */
+.project-body{
+  grid-template-columns: minmax(0,1fr) 260px; /* text | sidebar width */
+  gap: 24px;
+}
+
+/* Stop forcing a single aspect on all side images */
+.side-photo img{
+  width: 100%;
+  height: auto;
+  max-height: 420px;        /* prevents super-tall images */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Opt-in aspect helpers (use on a per-image basis) */
+.side-photo--portrait img{  aspect-ratio: 3/4; }
+.side-photo--landscape img{ aspect-ratio: 4/3; } /* or 16/10 if wider */
+
