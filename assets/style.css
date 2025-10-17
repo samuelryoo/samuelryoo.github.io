@@ -272,3 +272,27 @@ a:hover{ color: #37567f; }
   .project-body{ grid-template-columns: 1fr; }
   .side-gallery{ order: 2; }     /* stack under text on mobile */
 }
+
+/* Make the Simon video hero the same size as image heroes */
+.hero-media{
+  max-width: 900px;             /* matches .hero-image */
+  margin: 16px auto 28px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+  background:#000;              /* looks clean before video loads */
+}
+.hero-media__video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;            /* same “shape” as image hero */
+  object-fit:cover;
+}
+
+/* Let a side image be landscape (your simon-2.jpg) */
+.side-photo--landscape img{
+  aspect-ratio: 4/3;            /* or 16/10 if you prefer wider */
+  object-fit: cover;
+}
