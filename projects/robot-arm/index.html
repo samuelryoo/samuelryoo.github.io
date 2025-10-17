@@ -34,25 +34,43 @@
     </div>
   </section>
 
+  <!-- top image (smaller + centered) -->
   <figure class="hero-image" style="margin-top:16px;">
-    <img src="../../images/robot-arm.jpg" alt="Robot arm">
+    <img
+      src="../../images/robot-arm.jpg"
+      alt="Robot arm"
+      width="1600" height="900"
+      loading="lazy" decoding="async"
+    />
   </figure>
-
-  <section class="prose" style="margin-top:18px;">
-    <p>
-      Designed and built a multi-degree-of-freedom robotic arm driven by servos/steppers and an embedded controller.
-      I focused on motion reliability and repeatability: tuning PWM, shaping motion profiles, and organizing the control
-      loop so inputs, safety checks, and actuation stayed responsive under load.
-    </p>
-    <p>
-      My work covered firmware for joint control, timing/jitter mitigation, and integrating drivers, power, and mechanics.
-      Key challenges included torque vs. speed trade-offs, heat/current limits, and smoothing abrupt commands so the arm
-      moved naturally without overshoot.
-    </p>
-    <p>
-      The result is a stable demo that executes gestures consistently, with a documented setup that makes it easy to add
-      trajectories, limit switches, or higher-level kinematics later.
-    </p>
+  
+  <!-- text with two portrait images on the right -->
+  <section class="project-body">
+    <div class="prose">
+      <p>
+        Designed and built a multi-degree-of-freedom robotic arm driven by servos/steppers and an embedded controller.
+        I focused on motion reliability and repeatability: tuning PWM, shaping motion profiles, and organizing the control
+        loop so inputs, safety checks, and actuation stayed responsive under load.
+      </p>
+      <p>
+        My work covered firmware for joint control, timing/jitter mitigation, and integrating drivers, power, and mechanics.
+        Key challenges included torque vs. speed trade-offs, heat/current limits, and smoothing abrupt commands so the arm
+        moved naturally without overshoot.
+      </p>
+      <p>
+        The result is a stable demo that executes gestures consistently, with a documented setup that makes it easy to add
+        trajectories, limit switches, or higher-level kinematics later.
+      </p>
+    </div>
+  
+    <aside class="side-gallery">
+      <figure class="side-photo">
+        <img src="../../images/robot-arm-1.jpg" alt="Robot arm detail 1" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="side-photo">
+        <img src="../../images/robot-arm-2.jpg" alt="Robot arm detail 2" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+    </aside>
   </section>
 </main>
 
