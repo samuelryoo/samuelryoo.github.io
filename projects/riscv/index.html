@@ -26,36 +26,49 @@
   <!-- title + subtitle + badges -->
   <section class="hero-stack">
     <h1 class="project-title">RISC-V CPU (RV32I)</h1>
-    <p class="project-sub">Single-cycle 32-bit core designed in Verilog with clean interfaces and thorough testbenches.</p>
+    <p class="project-sub">Built and tested a fully functional RISC-V CPU in Verilog, using Vivado and implementing test cases.</p>
     <div class="project-meta">
       <span class="badge">Verilog</span>
-      <span class="badge">ModelSim</span>
-      <span class="badge">CPU</span>
-      <span class="badge">Digital Design</span>
+      <span class="badge">ALU</span>
+      <span class="badge">Testbench</span>
     </div>
   </section>
 
-  <!-- one big image (above the paragraph) -->
   <figure class="hero-image" style="margin-top:16px;">
-    <!-- <img src="../../images/riscv-hero.jpg" alt="RISC-V CPU overview"> -->
+    <img
+      src="../../images/riscv.jpg"
+      alt="RISC-V CPU datapath overview"
+      width="1600" height="900"
+      loading="lazy" decoding="async"
+    />
   </figure>
-
-  <!-- plain paragraph on the page background (no white bubble) -->
-  <section class="prose" style="margin-top:18px;">
-    <p>
-      Designed and implemented a modular RV32I single-cycle CPU with a clear separation between datapath and control.
-      Focused on ALU flags and condition handling, instruction decode and immediate formats, and a disciplined
-      testbench workflow that used waveforms to drive debugging.
-    </p>
-    <p>
-      My contributions included architecting the datapath and control units, implementing core operations, and writing
-      unit/integration testbenches to validate correctness across edge cases. The trickiest issues were signed
-      overflow/borrow propagation and getting flag timing correct while keeping module boundaries stable.
-    </p>
-    <p>
-      The result is a clean, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
-      peripheral interfaces) without breaking existing contracts.
-    </p>
+  
+  <section class="project-body">
+    <div class="prose">
+      <p>
+        Designed and implemented a modular RV32I single-cycle CPU with a clean separation between datapath and control.
+        Focus areas: ALU flags/conditions, instruction decode and immediate formats, and a disciplined testbench workflow
+        using waveforms to drive debugging.
+      </p>
+      <p>
+        Contributions included architecting datapath/control, implementing core operations, and writing unit/integration
+        testbenches to validate edge cases. Hardest issues: signed overflow/borrow propagation and precise flag timing
+        while keeping module interfaces stable.
+      </p>
+      <p>
+        Result: a tidy, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
+        peripherals) without breaking existing contracts.
+      </p>
+    </div>
+  
+    <aside class="side-gallery">
+      <figure class="side-photo">
+        <img src="../../images/riscv-1.jpg" alt="RISC-V datapath diagram" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="side-photo">
+        <img src="../../images/riscv-2.jpg" alt="Simulation waveforms" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+    </aside>
   </section>
 </main>
 
