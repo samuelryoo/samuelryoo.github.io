@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CMOS NAND Optimization — Samuel Ryoo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../../index.html">Samuel Ryoo</a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+  <nav class="nav" aria-label="Primary">
+    <ul id="nav-list" class="nav__list">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../projects.html" aria-current="page">Projects</a></li>
+      <li><a href="../../resume.html">Resume</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <!-- title + subtitle + badges -->
+  <section class="hero-stack">
+    <h1 class="project-title">CMOS NAND Optimization</h1>
+    <p class="project-sub">
+      Transistor-level CMOS NAND design, device sizing, and timing characterization using Cadence Virtuoso.
+    </p>
+    <div class="project-meta">
+      <span class="badge">Cadence Virtuoso</span>
+      <span class="badge">CMOS</span>
+      <span class="badge">Device Sizing</span>
+      <span class="badge">Timing Analysis</span>
+    </div>
+  </section>
+
+  <figure class="hero-image" style="margin-top:16px;">
+    <img
+      src="../../images/nand.jpg"
+      alt="CMOS NAND schematic and simulation results"
+      width="1600" height="900"
+      loading="lazy" decoding="async"
+    />
+  </figure>
+
+  <section class="project-body">
+    <div class="prose">
+      <h3>Transistor-Level NAND Gate Design & Characterization</h3>
+      <p>
+        This project focused on the optimization of a CMOS NAND gate at the transistor level using
+        Cadence Virtuoso. The objective was to design a functionally correct logic gate and to
+        systematically optimize device sizing to achieve balanced switching behavior and predictable
+        timing under realistic operating conditions.
+      </p>
+      <p>
+        The design process involved implementing PMOS pull-up and NMOS pull-down networks and
+        iteratively tuning transistor dimensions based on voltage transfer characteristics and
+        transient waveform analysis. Special attention was given to centering the switching threshold
+        near mid-supply and minimizing rise/fall asymmetry caused by carrier mobility differences.
+      </p>
+      <p>
+        Timing performance was characterized through parametric sweeps of supply voltage and
+        temperature to evaluate delay sensitivity and robustness. These experiments highlighted
+        speed–stability trade-offs and the impact of environmental variation on propagation delay.
+        The final design exhibits stable logic behavior and serves as a well-characterized baseline
+        for extending optimization techniques to more complex CMOS circuits.
+      </p>
+    </div>
+
+    <aside class="side-gallery">
+      <figure class="side-photo side-photo--landscape">
+        <img
+          src="../../images/nand-1.jpg"
+          alt="CMOS NAND parametric sweep or timing results"
+          width="1600" height="900"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+
+      <figure class="side-photo">
+        <img
+          src="../../images/nand-2.jpg"
+          alt="CMOS NAND schematic detail"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+
+      <figure class="side-photo">
+        <img
+          src="../../images/nand-3.jpg"
+          alt="CMOS NAND transient simulation waveform"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
+<script src="../../assets/main.js"></script>
+</body>
+</html>
