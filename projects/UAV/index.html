@@ -23,34 +23,82 @@
 </header>
 
 <main class="container">
+  <!-- title + subtitle + badges -->
   <section class="hero-stack">
     <h1 class="project-title">Multirotor UAV Avionics & Embedded Systems</h1>
     <p class="project-sub">
-      Embedded flight control, avionics integration, and flight testing.
+      Embedded flight control, avionics integration, and flight testing on a multirotor UAV platform.
     </p>
     <div class="project-meta">
       <span class="badge">Flight Controllers</span>
       <span class="badge">PWM / UART</span>
       <span class="badge">Embedded Systems</span>
+      <span class="badge">Telemetry</span>
     </div>
   </section>
 
+  <!-- hero video -->
+  <figure class="hero-media" style="margin-top:16px;">
+    <video
+      class="hero-media__video"
+      src="../../videos/uav-demo.mp4"
+      poster="../../images/uav.jpg"
+      controls
+      playsinline
+      preload="metadata"
+    >
+      Sorry, your browser can’t play this video.
+    </video>
+  </figure>
+
   <section class="project-body">
     <div class="prose">
+      <h3>UAV Avionics Integration & Flight Testing</h3>
       <p>
-        This project documents hands-on work integrating and testing a multirotor UAV avionics stack, including flight
-        controllers, ESCs, radio links, GPS, telemetry, and power systems. The focus is on embedded flight control,
-        system configuration, and real-world debugging under operational constraints.
+        This project documents hands-on work integrating and testing a multirotor UAV avionics stack, including
+        flight controllers, ESCs, radio links, GPS, telemetry, and power systems. The focus is on embedded flight
+        control configuration, peripheral integration, and real-world debugging under operational constraints.
       </p>
       <p>
-        Detailed documentation, system architecture, and flight testing results are currently being consolidated and
-        will be published here soon. This page will include configuration details, firmware considerations, telemetry
-        analysis, and lessons learned from flight testing and tuning.
+        Work included configuring flight control firmware, validating PWM motor outputs, integrating UART-based
+        peripherals, and verifying radio failsafe behavior across multiple flight modes. Flight testing was used
+        to evaluate system stability, telemetry integrity, and control responsiveness.
       </p>
       <p>
-        <em>Project documentation in progress — updates coming soon.</em>
+        Detailed system architecture, configuration notes, and flight data analysis are currently being consolidated
+        and will be published here.
+        <em>Documentation in progress.</em>
       </p>
     </div>
+
+    <aside class="side-gallery">
+      <figure class="side-photo">
+        <img
+          src="../../images/uav-1.jpg"
+          alt="UAV avionics and wiring detail"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+
+      <figure class="side-photo">
+        <img
+          src="../../images/uav-2.jpg"
+          alt="UAV flight controller and power distribution"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+      
+      <figure class="side-photo side-photo--landscape">
+        <img
+          src="../../images/uav-3.jpg"
+          alt="UAV flight testing"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+        />
+      </figure>
+    </aside>
   </section>
 </main>
 
@@ -58,4 +106,3 @@
 <script src="../../assets/main.js"></script>
 </body>
 </html>
-
