@@ -46,19 +46,25 @@
   
   <section class="project-body">
     <div class="prose">
+      <h3>RV32I Single-Cycle CPU Architecture</h3>
       <p>
-        Designed and implemented a modular RV32I single-cycle CPU with a clean separation between datapath and control.
-        Focus areas: ALU flags/conditions, instruction decode and immediate formats, and a disciplined testbench workflow
-        using waveforms to drive debugging.
+        This project involved the design and implementation of a modular RV32I single-cycle processor with a clear
+        separation between datapath and control logic. The objective was to build a correct, extensible baseline
+        architecture that emphasizes clean interfaces, deterministic control, and verifiable behavior.
       </p>
       <p>
-        Contributions included architecting datapath/control, implementing core operations, and writing unit/integration
-        testbenches to validate edge cases. Hardest issues: signed overflow/borrow propagation and precise flag timing
-        while keeping module interfaces stable.
+        The processor datapath was architected to support instruction fetch, decode, execution, and writeback, with
+        dedicated control logic for opcode decoding, immediate generation, and ALU operation selection. Particular
+        attention was given to ALU condition flags, branch evaluation, and precise control signal timing. Functional
+        correctness was validated using unit and integration testbenches, with waveform analysis serving as the primary
+        debugging and verification tool.
       </p>
       <p>
-        Result: a tidy, extensible baseline that passes all tests and lends itself to future upgrades (pipelining,
-        peripherals) without breaking existing contracts.
+        Key challenges included handling signed arithmetic edge cases such as overflow and borrow propagation while
+        preserving stable module interfaces. These issues were resolved through disciplined signal timing analysis and
+        iterative verification. The final design passes all test cases and provides a clean architectural foundation for
+        future extensions such as pipelining, memory-mapped peripherals, or multi-cycle execution without breaking
+        existing module contracts.
       </p>
     </div>
   </section>
