@@ -45,19 +45,24 @@
   
   <section class="project-body">
     <div class="prose">
+      <h3>Multi-DOF Robotic Arm Control System</h3>
       <p>
-        Designed and built a multi-degree-of-freedom robotic arm driven by servos/steppers and an embedded controller.
-        I focused on motion reliability and repeatability: tuning PWM, shaping motion profiles, and organizing the control
-        loop so inputs, safety checks, and actuation stayed responsive under load.
+        This project involved the design and implementation of a multi-degree-of-freedom robotic arm driven by servo and
+        stepper actuators and controlled by an embedded system. The primary objective was to achieve reliable and repeatable
+        motion while maintaining responsive control under varying mechanical loads and power constraints.
       </p>
       <p>
-        My work covered firmware for joint control, timing/jitter mitigation, and integrating drivers, power, and mechanics.
-        Key challenges included torque vs. speed trade-offs, heat/current limits, and smoothing abrupt commands so the arm
-        moved naturally without overshoot.
+        The control firmware was structured to manage joint-level actuation through carefully tuned PWM signals and
+        stepper timing, with a focus on minimizing jitter and ensuring deterministic behavior. Motion commands, safety
+        checks, and actuator updates were organized within a responsive control loop to prevent blocking behavior and
+        maintain stable operation during continuous motion.
       </p>
       <p>
-        The result is a stable demo that executes gestures consistently, with a documented setup that makes it easy to add
-        trajectories, limit switches, or higher-level kinematics later.
+        Key engineering challenges included balancing torque and speed trade-offs, managing current and thermal limits,
+        and shaping motion profiles to reduce abrupt transitions and overshoot. These issues were addressed through
+        incremental tuning of control parameters and structured sequencing of actuator commands. The resulting system
+        demonstrates consistent, repeatable motion and provides a modular foundation for future extensions such as
+        trajectory planning, limit switches, or higher-level kinematic control.
       </p>
     </div>
   
