@@ -4,35 +4,49 @@ layout: default
 {%- assign dir = "/assets/projects/" | append: page.slug | append: "/" -%}
 {%- assign fig = 0 -%}
 
-{%- comment %} Hero: video if hero.video exists, otherwise hero.image if it exists, otherwise nothing. {% endcomment -%}
+{%- comment %} Hero: video if hero.video exists, otherwise hero.image if it exists, otherwise the placeholder text. {% endcomment -%}
 {%- assign hero_img_path = dir | append: page.hero.image -%}
 {%- assign hero_vid_path = dir | append: page.hero.video -%}
 {%- assign hero_img = nil -%}{%- assign hero_vid = nil -%}
 {%- if page.hero.image -%}{%- assign hero_img = site.static_files | where: "path", hero_img_path | first -%}{%- endif -%}
 {%- if page.hero.video -%}{%- assign hero_vid = site.static_files | where: "path", hero_vid_path | first -%}{%- endif -%}
 
+{%- comment %} Actions: each one renders only if it has a url, or its file exists in this project's media folder. {% endcomment -%}
+{%- capture actions -%}
+  {%- for a in page.actions -%}
+    {%- if a.url -%}
+      <a class="btn" href="{{ a.url }}" rel="noopener">{{ a.label }} <span aria-hidden="true">↗</span></a>
+    {%- elsif a.file -%}
+      {%- assign a_path = dir | append: a.file -%}
+      {%- assign a_hit = site.static_files | where: "path", a_path | first -%}
+      {%- if a_hit -%}
+        {%- assign a_id = a.file | slugify -%}
+        {%- if a.file == page.hero.video -%}{%- assign a_id = "hero" -%}{%- endif -%}
+        <a class="btn" href="#{{ a_id }}">{{ a.label }} <span aria-hidden="true">↓</span></a>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign actions_stripped = actions | strip -%}
+
 <article class="project">
   <header class="wrap project__head">
     <p class="crumb"><a href="{{ '/projects/' | relative_url }}">Projects</a> <span aria-hidden="true">/</span> {{ page.short_title | default: page.title }}</p>
-    <p class="label">{{ page.kind }}{% if page.status == "In progress" %} <span class="pill">In progress</span>{% endif %}</p>
+    <p class="label">{{ page.kind }} · {{ page.timeline }}{% if page.status == "In progress" %} <span class="pill">In progress</span>{% endif %}</p>
     <h1>{{ page.title }}</h1>
     <p class="lead">{{ page.summary }}</p>
+    {%- if actions_stripped != "" or page.proprietary %}
+    <div class="actions">
+      {{ actions }}
+      {%- if page.proprietary %}
+      <p class="lock-note"><span aria-hidden="true">■</span> {{ page.proprietary }}</p>
+      {%- endif %}
+    </div>
+    {%- endif %}
   </header>
 
-  <div class="wrap">
-    <dl class="spec">
-      {%- if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
-      {%- if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
-      {%- if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline }}</dd></div>{% endif %}
-      {%- if page.status %}<div><dt>Status</dt><dd>{{ page.status_note | default: page.status }}</dd></div>{% endif %}
-      {%- for s in page.specs %}
-      <div><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>
-      {%- endfor %}
-    </dl>
-  </div>
-
-  {%- if hero_vid or hero_img %}
-  <div class="wrap">
+  <div class="wrap" id="hero">
+    {%- if hero_vid or hero_img %}
     <figure class="hero-media">
       <div class="hero-media__frame">
       {%- if hero_vid %}
@@ -48,6 +62,21 @@ layout: default
       <figcaption><span class="fig-no">Fig. {{ fig }}</span> {{ page.hero.caption }}</figcaption>
       {%- endif %}
     </figure>
+    {%- elsif page.hero.placeholder %}
+    <div class="hero-placeholder">
+      <span class="thumb__id">{{ page.tile_label | default: page.short_title }}</span>
+      <p>{{ page.hero.placeholder }}</p>
+    </div>
+    {%- endif %}
+  </div>
+
+  {%- if page.glance %}
+  <div class="wrap">
+    <dl class="glance" aria-label="At a glance">
+      {%- for g in page.glance %}
+      <div{% if g.label == "Result" or g.label == "Status" %} class="glance__result"{% endif %}><dt>{{ g.label }}</dt><dd>{{ g.value }}</dd></div>
+      {%- endfor %}
+    </dl>
   </div>
   {%- endif %}
 
@@ -65,21 +94,20 @@ layout: default
     <div class="prose">
       {{ content }}
     </div>
-    <aside class="project__aside" aria-label="Project links">
+    <aside class="project__aside" aria-label="Project details">
       {%- if page.stack %}
       <p class="label">Stack</p>
       <ul class="tags">{% for t in page.stack %}<li>{{ t }}</li>{% endfor %}</ul>
-      {%- endif %}
-      {%- if page.links %}
-      <p class="label">Links</p>
-      <ul class="linklist">
-        {%- for l in page.links %}<li><a href="{{ l.url }}" rel="noopener">{{ l.label }}</a></li>{% endfor %}
-      </ul>
       {%- endif %}
       {%- if page.coursework %}
       <p class="label">Related coursework</p>
       <p class="small">{{ page.coursework }}</p>
       {%- endif %}
+      <p class="label">More</p>
+      <ul class="linklist">
+        <li><a href="{{ '/projects/' | relative_url }}">All projects</a></li>
+        <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
+      </ul>
     </aside>
   </div>
 
@@ -94,7 +122,7 @@ layout: default
       {%- if m_hit -%}
         {%- assign fig = fig | plus: 1 -%}
         {%- assign ext = m.file | split: "." | last | downcase -%}
-        <figure class="gallery__item{% if m.wide %} gallery__item--wide{% endif %}{% if m.fit == 'contain' %} gallery__item--contain{% endif %}">
+        <figure id="{{ m.file | slugify }}" class="gallery__item{% if m.wide %} gallery__item--wide{% endif %}{% if m.fit == 'contain' %} gallery__item--contain{% endif %}">
           {%- if ext == "mp4" or ext == "webm" or ext == "mov" %}
           <video controls playsinline preload="metadata"{% if m.poster %} poster="{{ dir | append: m.poster | relative_url }}"{% endif %}>
             <source src="{{ m_path | relative_url }}">
