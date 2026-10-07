@@ -1,40 +1,63 @@
 ---
 title: About
 permalink: /about/
-description: About Samuel Ryoo, a Computer Science and Engineering student at UC Irvine working on embedded systems, robotics, and neuroengineering.
+description: About Samuel Ryoo, a Computer Science and Engineering student at UC Irvine working on embedded systems, hardware, robotics, and neuroengineering.
 ---
-<header class="wrap page-head">
-  <p class="label">About</p>
-  <h1>About me</h1>
-</header>
-
-<section class="wrap about">
-  <div class="about__text prose">
-    <p class="lead">I am a Computer Science and Engineering student at UC Irvine. I like the layer where software meets hardware: circuit boards, microcontrollers, motors, and sensors.</p>
-    <p>Most of what I have built so far has been for robots and drones. At Refined Robotics in Tokyo I designed the power distribution for a delivery robot's sensor payload, including two circuit board revisions and the motor control for its delivery mechanism. Before that I led the electrical work on a robotic arm with ZotBotics, set up the radio and telemetry links on a multirotor, and wrote bare-metal firmware for an AVR microcontroller.</p>
-    <p>The direction I am heading is neuroengineering. A brain-computer interface needs the same things a robot does, low-noise electronics, real-time firmware, and reliable hardware, applied to much smaller signals. I joined UC Irvine's Brain-Computer Interface Lab in September 2026, and on my own time I am building an EMG-controlled hand as a first biosignal platform.</p>
-    <p>Outside engineering I cook, play golf and acoustic guitar, follow the Dodgers, and backpack in the San Gabriel Mountains. In high school I founded Making an Impact, a non-profit that organized homeless outreach and grew to more than 200 members.</p>
-    <div class="actions">
-      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
-      <a class="btn" href="{{ '/resume/' | relative_url }}">Resume</a>
-    </div>
+<header class="wrap page-head about-head">
+  <div>
+    <p class="label">About</p>
+    <h1>I like the layer where software meets hardware.</h1>
+    <p class="lead">I am a Computer Science and Engineering student at UC Irvine. I am happiest when a system misbehaves and I have to find out why: a noisy supply, a floating pin, two devices that disagree about a serial port.</p>
   </div>
   <figure class="about__photo">
-    <img src="{{ '/assets/img/samuel-ryoo.jpg' | relative_url }}" alt="Portrait of Samuel Ryoo" width="1179" height="1216" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/samuel-ryoo.jpg' | relative_url }}" alt="Portrait of Samuel Ryoo" width="776" height="800" decoding="async">
   </figure>
+</header>
+
+<section class="wrap section" aria-labelledby="path-h">
+  <h2 id="path-h" class="section-title"><span>From logic levels to biosignals</span></h2>
+  <div class="path">
+    {% include signal-trace.html %}
+    <ol class="path__stages">
+      {%- for s in site.data.path %}
+      <li>
+        <span class="path__when">{{ s.when }}</span>
+        <h3>{{ s.stage }}</h3>
+        <p>{{ s.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+  <p class="path__note">The signals I work with keep getting smaller: logic levels, then sensor data, and now the electrical activity of muscles and the brain. A brain-computer interface needs what a robot needs, low-noise electronics and real-time firmware, applied to much fainter signals. That is where I am heading. See <a href="{{ '/experience/#research' | relative_url }}">current research</a> and the <a href="{{ '/projects/emg-hand/' | relative_url }}">EMG hand</a>.</p>
+</section>
+
+<section class="wrap section" aria-labelledby="off-h">
+  <h2 id="off-h" class="section-title"><span>Off the bench</span></h2>
+  <p class="editorial">Away from the bench I play <mark>acoustic guitar</mark> and <mark>golf</mark>, which I played on varsity in high school. I follow the <mark>Dodgers</mark>, cook ad hoc, and go <mark>backpacking</mark> in the San Gabriel Mountains. In 2026 I spent a summer living and working in <mark>Tokyo</mark>.</p>
+  {%- comment %}
+    Personal photos. Each entry in _data/about_photos.yml shows only when its file exists in
+    assets/img/about/. Add guitar.jpg, golf.jpg, dodgers.jpg, cooking.jpg, san-gabriels.jpg, tokyo.jpg.
+  {% endcomment -%}
+  {%- capture snaps -%}
+    {%- for ph in site.data.about_photos -%}
+      {%- assign ph_path = "/assets/img/about/" | append: ph.file -%}
+      {%- assign ph_hit = site.static_files | where: "path", ph_path | first -%}
+      {%- if ph_hit -%}
+      <figure class="snaps__item">
+        <img src="{{ ph_path | relative_url }}" alt="{{ ph.alt | escape }}" loading="lazy" decoding="async">
+        <figcaption>{{ ph.caption }}</figcaption>
+      </figure>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign snaps_stripped = snaps | strip -%}
+  {%- if snaps_stripped != "" %}
+  <div class="snaps">{{ snaps }}</div>
+  {%- endif %}
+  <p class="small off-note">Before college I founded Making an Impact, a non-profit that organized homeless outreach and grew to more than 200 members.</p>
 </section>
 
 <section class="wrap section" aria-labelledby="tools-h">
   <h2 id="tools-h" class="section-title"><span>Toolchain</span></h2>
   {% include skills.html %}
-</section>
-
-<section class="wrap section" id="contact" aria-labelledby="contact-h">
-  <h2 id="contact-h" class="section-title"><span>Contact</span></h2>
-  <dl class="skills">
-    <div><dt>Email</dt><dd><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd></div>
-    <div><dt>GitHub</dt><dd><a href="https://github.com/{{ site.author.github }}" rel="me noopener">github.com/{{ site.author.github }}</a></dd></div>
-    <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="me noopener">linkedin.com/in/{{ site.author.linkedin }}</a></dd></div>
-    <div><dt>Location</dt><dd>Irvine, CA. Open to relocating.</dd></div>
-  </dl>
 </section>
