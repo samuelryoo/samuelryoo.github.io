@@ -1,0 +1,75 @@
+---
+title: Experience
+permalink: /experience/
+description: Samuel Ryoo's research, engineering experience, and education, including the UCI Brain-Computer Interface Lab and Refined Robotics.
+---
+<header class="wrap page-head">
+  <p class="label">Experience</p>
+  <h1>Research and engineering experience</h1>
+  <p class="lead">Where I have worked, what I was responsible for, and what I am doing now.</p>
+</header>
+
+<section class="wrap section section--tight" id="research" aria-labelledby="research-h">
+  <h2 id="research-h" class="section-title"><span>Research</span></h2>
+  {%- for e in site.data.experience -%}{%- if e.section == "research" %}
+  <article class="entry">
+    <header class="entry__head">
+      <h3>{{ e.org }}</h3>
+      <p class="entry__meta">{{ e.role }} · {{ e.dates }} · {{ e.location }}</p>
+    </header>
+    <div class="entry__body">
+      <p>{{ e.summary }}</p>
+      <p>A brain-computer interface is an engineering chain: electrodes, acquisition electronics, signal conditioning, processing, a controller, and an actuator or stimulator. I am most interested in the hardware and embedded parts of that chain, which is where my electronics and firmware background applies.</p>
+      <p class="note">I joined recently and have not completed technical work in the lab yet. This section will be updated as that changes. For biosignal work I have done on my own, see the <a href="{{ '/projects/emg-hand/' | relative_url }}">EMG-controlled hand</a>.</p>
+    </div>
+  </article>
+  {%- endif -%}{%- endfor %}
+</section>
+
+<section class="wrap section" id="work" aria-labelledby="work-h">
+  <h2 id="work-h" class="section-title"><span>Engineering</span></h2>
+  {%- for e in site.data.experience -%}{%- if e.section == "work" %}
+  <article class="entry">
+    <header class="entry__head">
+      <h3>{{ e.org }}</h3>
+      <p class="entry__meta">{{ e.role }} · {{ e.dates }} · {{ e.location }}</p>
+    </header>
+    <div class="entry__body">
+      <p>{{ e.summary }}</p>
+      <ul>
+        {%- for pt in e.points %}<li>{{ pt }}</li>{% endfor %}
+      </ul>
+      {%- if e.project %}
+      <p><a class="more" href="{{ '/projects/' | append: e.project | append: '/' | relative_url }}">Read the case study →</a></p>
+      {%- endif %}
+    </div>
+  </article>
+  {%- endif -%}{%- endfor %}
+</section>
+
+<section class="wrap section" id="education" aria-labelledby="edu-h">
+  <h2 id="edu-h" class="section-title"><span>Education</span></h2>
+  <article class="entry">
+    <header class="entry__head">
+      <h3>University of California, Irvine</h3>
+      <p class="entry__meta">B.S. Computer Science and Engineering · Expected June 2027</p>
+    </header>
+    <div class="entry__body">
+      <p>Dean's Honor List, six quarters. Rose Hills Foundation Undergraduate Scholarship.</p>
+      <p><strong>Relevant coursework:</strong> Embedded Software, Autonomous Systems, Drones, Digital Systems, Digital Logic Lab, Organization of Digital Computers, Circuit Analysis, Electronic Devices and Circuits, Operating Systems, Computer Networks.</p>
+    </div>
+  </article>
+</section>
+
+<section class="wrap section" id="leadership" aria-labelledby="lead-h">
+  <h2 id="lead-h" class="section-title"><span>Leadership</span></h2>
+  {%- for e in site.data.experience -%}{%- if e.section == "leadership" %}
+  <article class="entry">
+    <header class="entry__head">
+      <h3>{{ e.org }}</h3>
+      <p class="entry__meta">{{ e.role }} · {{ e.dates }} · {{ e.location }}</p>
+    </header>
+    <div class="entry__body"><p>{{ e.summary }}</p></div>
+  </article>
+  {%- endif -%}{%- endfor %}
+</section>
