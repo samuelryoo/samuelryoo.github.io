@@ -6,8 +6,8 @@ title: Samuel Ryoo
   <div class="hero__copy">
     <p class="label">Computer Science and Engineering · UC Irvine</p>
     <h1>Samuel Ryoo</h1>
-    <p class="hero__statement">I build the electronics and firmware that sit between sensors, processors, and things that move.</p>
-    <p class="lead">Power boards and motor control for robots, bare-metal firmware on microcontrollers, and avionics for drones. I am now applying the same skills to biosignal hardware as an undergraduate researcher in UC Irvine's Brain-Computer Interface Lab.</p>
+    <p class="hero__statement">I build the electronics and firmware between sensors, processors, and <mark>things that move</mark>.</p>
+    <p class="lead">Embedded systems and hardware for robots and drones, now heading toward neuroengineering.</p>
     <div class="actions">
       <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
       <a class="btn" href="{{ '/resume/' | relative_url }}">Resume</a>
@@ -16,30 +16,20 @@ title: Samuel Ryoo
     </div>
   </div>
   <dl class="titleblock" aria-label="At a glance">
-    <div><dt>Focus</dt><dd>Embedded systems · Robotics · Neuroengineering</dd></div>
+    <div><dt>Focus</dt><dd>Embedded systems · Hardware · Robotics</dd></div>
     <div><dt>Now</dt><dd>Undergraduate Researcher, UCI Brain-Computer Interface Lab</dd></div>
-    <div><dt>Previously</dt><dd>Hardware Engineering Intern, Refined Robotics, Tokyo</dd></div>
-    <div><dt>Degree</dt><dd>B.S. Computer Science and Engineering, expected June 2027</dd></div>
+    <div><dt>Before</dt><dd>Hardware Engineering Intern on a delivery robot, Tokyo</dd></div>
     <div><dt>Seeking</dt><dd>Embedded, firmware, and hardware internships and co-ops</dd></div>
   </dl>
 </section>
 
-<section class="wrap section" aria-labelledby="focus-h">
-  <h2 id="focus-h" class="section-title"><span>What I work on</span></h2>
-  <div class="focus">
-    {%- for f in site.data.focus %}
-    <div class="focus__item">
-      <h3>{{ f.area }}</h3>
-      <p>{{ f.text }}</p>
-      <p class="focus__links">
-        {%- for l in f.links -%}
-          {%- if l.url -%}{%- assign href = l.url -%}{%- else -%}{%- assign href = "/projects/" | append: l.project | append: "/" -%}{%- endif -%}
-          <a href="{{ href | relative_url }}">{{ l.label }}</a>
-        {%- endfor -%}
-      </p>
-    </div>
-    {%- endfor %}
-  </div>
+<section class="wrap strip" aria-label="Photos from the bench">
+  {%- for s in site.data.home_strip %}
+  <a class="strip__item" href="{{ '/projects/' | append: s.project | append: '/' | relative_url }}">
+    <img src="{{ '/assets/img/home/' | append: s.file | relative_url }}" alt="{{ s.alt | escape }}"{% unless forloop.first %} loading="lazy"{% endunless %} decoding="async">
+    <span class="strip__cap">{{ s.caption }}</span>
+  </a>
+  {%- endfor %}
 </section>
 
 <section class="wrap section" aria-labelledby="work-h">
@@ -47,10 +37,10 @@ title: Samuel Ryoo
     <h2 id="work-h" class="section-title"><span>Selected projects</span></h2>
     <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a>
   </div>
-  <div class="plist">
+  <div class="tgrid">
     {%- for p in projects -%}
       {%- if p.featured -%}
-        {% include project-card.html project=p variant="feature" %}
+        {% include project-card.html project=p variant="teaser" %}
       {%- endif -%}
     {%- endfor -%}
   </div>
@@ -61,22 +51,17 @@ title: Samuel Ryoo
     <h2 id="exp-h" class="section-title"><span>Experience</span></h2>
     <a class="more" href="{{ '/experience/' | relative_url }}">Details →</a>
   </div>
-  <ol class="timeline timeline--brief">
+  <ol class="timeline">
     {%- for e in site.data.experience -%}
     {%- unless e.section == "leadership" %}
     <li>
       <span class="timeline__when">{{ e.dates }}</span>
       <div>
         <h3>{{ e.role }} <span class="at">· {{ e.org }}</span></h3>
-        <p>{{ e.summary }}</p>
+        <p>{{ e.brief }}</p>
       </div>
     </li>
     {%- endunless -%}
     {%- endfor %}
   </ol>
-</section>
-
-<section class="wrap section" aria-labelledby="tools-h">
-  <h2 id="tools-h" class="section-title"><span>Toolchain</span></h2>
-  {% include skills.html %}
 </section>
