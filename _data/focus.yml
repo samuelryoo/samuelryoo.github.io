@@ -1,0 +1,20 @@
+# The four focus areas on the home page. `evidence` should point at real work.
+- area: Embedded and firmware
+  text: Bare-metal C on AVR, real-time filtering on an ESP32, and motor control firmware.
+  links:
+    - { label: AVR Memory Game, project: simon }
+    - { label: EMG Hand, project: emg-hand }
+- area: Hardware and PCB
+  text: Power architecture, two KiCad board revisions, current sensing, and harnessing.
+  links:
+    - { label: Delivery Robot Payload, project: delivery-robot-payload }
+- area: Robotics and integration
+  text: Getting sensors, compute, motors, and radios working as one system.
+  links:
+    - { label: UAV Avionics, project: UAV }
+    - { label: Robotic Arm, project: robot-arm }
+- area: Neuroengineering
+  text: Biosignal acquisition hardware, and undergraduate research in UC Irvine's BCI Lab.
+  links:
+    - { label: EMG Hand, project: emg-hand }
+    - { label: Research, url: "/experience/#research" }
