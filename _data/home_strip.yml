@@ -1,0 +1,14 @@
+# The three photos under the home page hero. Files live in assets/img/home/.
+# Swap a file (same name) or edit an entry to change the strip.
+- file: soldering.jpg
+  alt: Soldering a small board held under a magnifier in a helping-hands clamp
+  caption: At the bench
+  project: simon
+- file: ground-station.jpg
+  alt: Laptop running a ground station map with drone electronics wired up beside it
+  caption: UAV ground station
+  project: UAV
+- file: motor-drivers.jpg
+  alt: Row of stepper motor drivers with heatsinks wired to a power supply and breadboard
+  caption: Motor drivers, robotic arm
+  project: robot-arm
