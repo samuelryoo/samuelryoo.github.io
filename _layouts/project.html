@@ -1,0 +1,140 @@
+---
+layout: default
+---
+{%- assign dir = "/assets/projects/" | append: page.slug | append: "/" -%}
+{%- assign fig = 0 -%}
+
+{%- comment %} Hero: video if hero.video exists, otherwise hero.image if it exists, otherwise nothing. {% endcomment -%}
+{%- assign hero_img_path = dir | append: page.hero.image -%}
+{%- assign hero_vid_path = dir | append: page.hero.video -%}
+{%- assign hero_img = nil -%}{%- assign hero_vid = nil -%}
+{%- if page.hero.image -%}{%- assign hero_img = site.static_files | where: "path", hero_img_path | first -%}{%- endif -%}
+{%- if page.hero.video -%}{%- assign hero_vid = site.static_files | where: "path", hero_vid_path | first -%}{%- endif -%}
+
+<article class="project">
+  <header class="wrap project__head">
+    <p class="crumb"><a href="{{ '/projects/' | relative_url }}">Projects</a> <span aria-hidden="true">/</span> {{ page.short_title | default: page.title }}</p>
+    <p class="label">{{ page.kind }}{% if page.status == "In progress" %} <span class="pill">In progress</span>{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.summary }}</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="spec">
+      {%- if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {%- if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
+      {%- if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline }}</dd></div>{% endif %}
+      {%- if page.status %}<div><dt>Status</dt><dd>{{ page.status_note | default: page.status }}</dd></div>{% endif %}
+      {%- for s in page.specs %}
+      <div><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+
+  {%- if hero_vid or hero_img %}
+  <div class="wrap">
+    <figure class="hero-media">
+      <div class="hero-media__frame">
+      {%- if hero_vid %}
+      <video controls playsinline preload="metadata"{% if hero_img %} poster="{{ hero_img_path | relative_url }}"{% endif %}>
+        <source src="{{ hero_vid_path | relative_url }}" type="video/mp4">
+        <a href="{{ hero_vid_path | relative_url }}">Download the video</a>
+      </video>
+      {%- else %}
+      <img src="{{ hero_img_path | relative_url }}" alt="{{ page.hero.alt | escape }}" decoding="async">
+      {%- endif %}
+      </div>
+      {%- if page.hero.caption %}{% assign fig = fig | plus: 1 %}
+      <figcaption><span class="fig-no">Fig. {{ fig }}</span> {{ page.hero.caption }}</figcaption>
+      {%- endif %}
+    </figure>
+  </div>
+  {%- endif %}
+
+  {%- if page.chains %}
+  <section class="wrap" aria-label="System diagram">
+    <div class="project__chains">
+    {%- for chain in page.chains %}
+      {% include chain.html chain=chain %}
+    {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  <div class="wrap project__body">
+    <div class="prose">
+      {{ content }}
+    </div>
+    <aside class="project__aside" aria-label="Project links">
+      {%- if page.stack %}
+      <p class="label">Stack</p>
+      <ul class="tags">{% for t in page.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+      {%- endif %}
+      {%- if page.links %}
+      <p class="label">Links</p>
+      <ul class="linklist">
+        {%- for l in page.links %}<li><a href="{{ l.url }}" rel="noopener">{{ l.label }}</a></li>{% endfor %}
+      </ul>
+      {%- endif %}
+      {%- if page.coursework %}
+      <p class="label">Related coursework</p>
+      <p class="small">{{ page.coursework }}</p>
+      {%- endif %}
+    </aside>
+  </div>
+
+  {%- comment %}
+    Gallery: every entry in `media:` is a slot. A slot only renders once its file exists in
+    assets/projects/<slug>/, so you can list photos you plan to add without leaving holes on the page.
+  {% endcomment -%}
+  {%- capture gallery -%}
+    {%- for m in page.media -%}
+      {%- assign m_path = dir | append: m.file -%}
+      {%- assign m_hit = site.static_files | where: "path", m_path | first -%}
+      {%- if m_hit -%}
+        {%- assign fig = fig | plus: 1 -%}
+        {%- assign ext = m.file | split: "." | last | downcase -%}
+        <figure class="gallery__item{% if m.wide %} gallery__item--wide{% endif %}{% if m.fit == 'contain' %} gallery__item--contain{% endif %}">
+          {%- if ext == "mp4" or ext == "webm" or ext == "mov" %}
+          <video controls playsinline preload="metadata"{% if m.poster %} poster="{{ dir | append: m.poster | relative_url }}"{% endif %}>
+            <source src="{{ m_path | relative_url }}">
+          </video>
+          {%- else %}
+          <a href="{{ m_path | relative_url }}" data-lightbox>
+            <img src="{{ m_path | relative_url }}" alt="{{ m.alt | escape }}" loading="lazy" decoding="async">
+          </a>
+          {%- endif %}
+          <figcaption><span class="fig-no">Fig. {{ fig }}</span> {{ m.caption }}</figcaption>
+        </figure>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign gallery_stripped = gallery | strip -%}
+  {%- if gallery_stripped != "" %}
+  <section class="wrap project__gallery" aria-labelledby="media-h">
+    <h2 id="media-h" class="section-title"><span>Media</span></h2>
+    <div class="gallery">
+      {{ gallery }}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- assign sorted = site.projects | sort: "order" -%}
+  {%- for p in sorted -%}
+    {%- if p.url == page.url -%}
+      {%- assign idx = forloop.index0 -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign prev_idx = idx | minus: 1 -%}
+  {%- assign next_idx = idx | plus: 1 -%}
+  <nav class="wrap pager" aria-label="More projects">
+    <div class="pager__inner">
+    {%- if idx > 0 %}{% assign pp = sorted[prev_idx] %}
+    <a class="pager__link" href="{{ pp.url | relative_url }}"><span class="label">← Previous</span><span>{{ pp.short_title | default: pp.title }}</span></a>
+    {%- else %}<span></span>{% endif %}
+    {%- if next_idx < sorted.size %}{% assign np = sorted[next_idx] %}
+    <a class="pager__link pager__link--next" href="{{ np.url | relative_url }}"><span class="label">Next →</span><span>{{ np.short_title | default: np.title }}</span></a>
+    {%- endif %}
+    </div>
+  </nav>
+</article>
