@@ -1,0 +1,40 @@
+---
+title: About
+permalink: /about/
+description: About Samuel Ryoo, a Computer Science and Engineering student at UC Irvine working on embedded systems, robotics, and neuroengineering.
+---
+<header class="wrap page-head">
+  <p class="label">About</p>
+  <h1>About me</h1>
+</header>
+
+<section class="wrap about">
+  <div class="about__text prose">
+    <p class="lead">I am a Computer Science and Engineering student at UC Irvine. I like the layer where software meets hardware: circuit boards, microcontrollers, motors, and sensors.</p>
+    <p>Most of what I have built so far has been for robots and drones. At Refined Robotics in Tokyo I designed the power distribution for a delivery robot's sensor payload, including two circuit board revisions and the motor control for its delivery mechanism. Before that I led the electrical work on a robotic arm with ZotBotics, set up the radio and telemetry links on a multirotor, and wrote bare-metal firmware for an AVR microcontroller.</p>
+    <p>The direction I am heading is neuroengineering. A brain-computer interface needs the same things a robot does, low-noise electronics, real-time firmware, and reliable hardware, applied to much smaller signals. I joined UC Irvine's Brain-Computer Interface Lab in September 2026, and on my own time I am building an EMG-controlled hand as a first biosignal platform.</p>
+    <p>Outside engineering I cook, play golf and acoustic guitar, follow the Dodgers, and backpack in the San Gabriel Mountains. In high school I founded Making an Impact, a non-profit that organized homeless outreach and grew to more than 200 members.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+      <a class="btn" href="{{ '/resume/' | relative_url }}">Resume</a>
+    </div>
+  </div>
+  <figure class="about__photo">
+    <img src="{{ '/assets/img/samuel-ryoo.jpg' | relative_url }}" alt="Portrait of Samuel Ryoo" width="1179" height="1216" loading="lazy" decoding="async">
+  </figure>
+</section>
+
+<section class="wrap section" aria-labelledby="tools-h">
+  <h2 id="tools-h" class="section-title"><span>Toolchain</span></h2>
+  {% include skills.html %}
+</section>
+
+<section class="wrap section" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h" class="section-title"><span>Contact</span></h2>
+  <dl class="skills">
+    <div><dt>Email</dt><dd><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd></div>
+    <div><dt>GitHub</dt><dd><a href="https://github.com/{{ site.author.github }}" rel="me noopener">github.com/{{ site.author.github }}</a></dd></div>
+    <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="me noopener">linkedin.com/in/{{ site.author.linkedin }}</a></dd></div>
+    <div><dt>Location</dt><dd>Irvine, CA. Open to relocating.</dd></div>
+  </dl>
+</section>

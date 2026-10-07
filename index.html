@@ -1,64 +1,82 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samuel Ryoo — Home</title>
-  <meta name="description" content="Portfolio of Samuel Ryoo — projects, resume, and contact." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>S</text></svg>">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">Samuel Ryoo</a>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-    <nav class="nav" aria-label="Primary">
-      <ul id="nav-list" class="nav__list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+---
+title: Samuel Ryoo
+---
+{%- assign projects = site.projects | sort: "order" -%}
+<section class="wrap hero">
+  <div class="hero__copy">
+    <p class="label">Computer Science and Engineering · UC Irvine</p>
+    <h1>Samuel Ryoo</h1>
+    <p class="hero__statement">I build the electronics and firmware that sit between sensors, processors, and things that move.</p>
+    <p class="lead">Power boards and motor control for robots, bare-metal firmware on microcontrollers, and avionics for drones. I am now applying the same skills to biosignal hardware as an undergraduate researcher in UC Irvine's Brain-Computer Interface Lab.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+      <a class="btn" href="{{ '/resume/' | relative_url }}">Resume</a>
+      <a class="btn btn--quiet" href="https://github.com/{{ site.author.github }}" rel="me noopener">GitHub</a>
+      <a class="btn btn--quiet" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="me noopener">LinkedIn</a>
+    </div>
+  </div>
+  <dl class="titleblock" aria-label="At a glance">
+    <div><dt>Focus</dt><dd>Embedded systems · Robotics · Neuroengineering</dd></div>
+    <div><dt>Now</dt><dd>Undergraduate Researcher, UCI Brain-Computer Interface Lab</dd></div>
+    <div><dt>Previously</dt><dd>Hardware Engineering Intern, Refined Robotics, Tokyo</dd></div>
+    <div><dt>Degree</dt><dd>B.S. Computer Science and Engineering, expected June 2027</dd></div>
+    <div><dt>Seeking</dt><dd>Embedded, firmware, and hardware internships and co-ops</dd></div>
+  </dl>
+</section>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero__copy">
-        <h1>Hi, I’m Samuel.</h1>
-        <p class="lead">I'm an aspiring embedded systems engineer, looking to put my brain and two hands to good use.</p>
-        <div class="cta">
-          <a class="btn" href="projects.html">My Projects</a>
-          <a class="btn btn--ghost" href="resume.html">Resume</a>
-        </div>
+<section class="wrap section" aria-labelledby="focus-h">
+  <h2 id="focus-h" class="section-title"><span>What I work on</span></h2>
+  <div class="focus">
+    {%- for f in site.data.focus %}
+    <div class="focus__item">
+      <h3>{{ f.area }}</h3>
+      <p>{{ f.text }}</p>
+      <p class="focus__links">
+        {%- for l in f.links -%}
+          {%- if l.url -%}{%- assign href = l.url -%}{%- else -%}{%- assign href = "/projects/" | append: l.project | append: "/" -%}{%- endif -%}
+          <a href="{{ href | relative_url }}">{{ l.label }}</a>
+        {%- endfor -%}
+      </p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="work-h">
+  <div class="section-head">
+    <h2 id="work-h" class="section-title"><span>Selected projects</span></h2>
+    <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </div>
+  <div class="plist">
+    {%- for p in projects -%}
+      {%- if p.featured -%}
+        {% include project-card.html project=p variant="feature" %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="exp-h">
+  <div class="section-head">
+    <h2 id="exp-h" class="section-title"><span>Experience</span></h2>
+    <a class="more" href="{{ '/experience/' | relative_url }}">Details →</a>
+  </div>
+  <ol class="timeline timeline--brief">
+    {%- for e in site.data.experience -%}
+    {%- unless e.section == "leadership" %}
+    <li>
+      <span class="timeline__when">{{ e.dates }}</span>
+      <div>
+        <h3>{{ e.role }} <span class="at">· {{ e.org }}</span></h3>
+        <p>{{ e.summary }}</p>
       </div>
-      <img class="hero__photo"
-           src="images/me.jpg"
-           alt="Photo of Samuel Ryoo"
-           width="512"
-           height="512"
-        />
-    </section>
+    </li>
+    {%- endunless -%}
+    {%- endfor %}
+  </ol>
+</section>
 
-    <section class="cards">
-      <article class="card">
-        <h2>Skills I've learned</h2>
-        <p>C++, Python, Verilog, Arduino IDE, ML Model development, Embedded Systems, Circuit Design, KiCad, Soldering</p>
-      </article>
-      <article class="card">
-        <h2>Where I'm learning</h2>
-        <p>B.S. Computer Science and Engineering University of California, Irvine</p>
-      </article>
-      <article class="card">
-        <h2>Hobbies I've enjoyed</h2>
-        <p>Backyard Grilling, Golf (Varsity D1 Champion), Dodgers Baseball, Acoustic Guitar, Backpacking the San Gabriel Mountains</p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">© <span id="year"></span> Samuel Ryoo</footer>
-  <script src="assets/main.js"></script>
-</body>
-</html>
+<section class="wrap section" aria-labelledby="tools-h">
+  <h2 id="tools-h" class="section-title"><span>Toolchain</span></h2>
+  {% include skills.html %}
+</section>

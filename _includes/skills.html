@@ -1,0 +1,5 @@
+<dl class="skills">
+  {%- for s in site.data.skills %}
+  <div><dt>{{ s.group }}</dt><dd>{{ s.items | join: ", " }}</dd></div>
+  {%- endfor %}
+</dl>

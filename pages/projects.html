@@ -1,0 +1,33 @@
+---
+title: Projects
+permalink: /projects/
+description: Engineering projects by Samuel Ryoo in embedded systems, PCB design, robotics, avionics, biosignals, and digital design.
+---
+{%- assign projects = site.projects | sort: "order" -%}
+<header class="wrap page-head">
+  <p class="label">Projects</p>
+  <h1>Things I have built</h1>
+  <p class="lead">Each page covers what the system does, the part I owned, the decisions behind it, and what is and is not finished.</p>
+</header>
+
+<section class="wrap section section--tight" aria-labelledby="sel-h">
+  <h2 id="sel-h" class="section-title"><span>Embedded systems, hardware, and robotics</span></h2>
+  <div class="plist">
+    {%- for p in projects -%}
+      {%- if p.featured -%}
+        {% include project-card.html project=p variant="feature" %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="more-h">
+  <h2 id="more-h" class="section-title"><span>More projects</span></h2>
+  <div class="pgrid">
+    {%- for p in projects -%}
+      {%- unless p.featured -%}
+        {% include project-card.html project=p variant="compact" %}
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</section>

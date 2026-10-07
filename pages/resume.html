@@ -1,0 +1,18 @@
+---
+title: Resume
+permalink: /resume/
+description: Resume of Samuel Ryoo, Computer Science and Engineering student at UC Irvine.
+---
+<header class="wrap page-head">
+  <p class="label">Resume</p>
+  <h1>Resume</h1>
+  <div class="actions">
+    <a class="btn btn--primary" href="{{ site.resume_pdf | relative_url }}" download>Download PDF</a>
+    <a class="btn" href="{{ site.resume_pdf | relative_url }}" target="_blank" rel="noopener">Open in a new tab</a>
+  </div>
+</header>
+<section class="wrap">
+  <object class="resume-frame" data="{{ site.resume_pdf | relative_url }}#view=FitH" type="application/pdf" aria-label="Resume PDF">
+    <p>Your browser cannot show the PDF inline. <a href="{{ site.resume_pdf | relative_url }}">Open the resume PDF</a>.</p>
+  </object>
+</section>

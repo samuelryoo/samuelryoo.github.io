@@ -1,0 +1,5 @@
+# Top navigation. Keep this short.
+- { label: Projects,   url: /projects/ }
+- { label: Experience, url: /experience/ }
+- { label: About,      url: /about/ }
+- { label: Resume,     url: /resume/ }

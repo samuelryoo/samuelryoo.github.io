@@ -1,0 +1,21 @@
+{%- comment -%}
+  Block diagram built from front matter. Usage: {% include chain.html chain=chain %}
+  chain.title  — caption
+  chain.nodes  — list of { name, note (optional), link (optional label on the arrow to the next node) }
+{%- endcomment -%}
+<figure class="chain">
+  {%- if include.chain.title %}<figcaption class="label">{{ include.chain.title }}</figcaption>{% endif %}
+  <ol class="chain__row">
+    {%- for node in include.chain.nodes %}
+    <li class="chain__item">
+      <span class="chain__node">
+        <span class="chain__name">{{ node.name }}</span>
+        {%- if node.note %}<span class="chain__note">{{ node.note }}</span>{% endif %}
+      </span>
+      {%- unless forloop.last %}
+      <span class="chain__link"><span class="visually-hidden"> then </span>{% if node.link %}<span class="chain__via">{{ node.link }}</span>{% endif %}</span>
+      {%- endunless %}
+    </li>
+    {%- endfor %}
+  </ol>
+</figure>
