@@ -1,22 +1,25 @@
 {%- comment -%}
-  Card thumbnail. Shows assets/projects/<slug>/<hero.image> when that file exists;
-  otherwise falls back to a typographic tile, so nothing looks broken before photos are added.
+  Card thumbnail. Uses assets/projects/<slug>/thumb.jpg if present, otherwise the hero image.
+  With neither, it falls back to a typographic tile, so nothing looks broken before photos exist.
 {%- endcomment -%}
 {%- assign p = include.project -%}
-{%- assign thumb_path = "/assets/projects/" | append: p.slug | append: "/" | append: p.hero.image -%}
-{%- assign thumb_hit = nil -%}
-{%- if p.hero.image -%}{%- assign thumb_hit = site.static_files | where: "path", thumb_path | first -%}{%- endif -%}
-{%- if thumb_hit -%}
-<div class="thumb"><img src="{{ thumb_path | relative_url }}" alt="{{ p.hero.alt | escape }}" loading="lazy" decoding="async"></div>
+{%- assign t_dir = "/assets/projects/" | append: p.slug | append: "/" -%}
+{%- assign t_small = t_dir | append: "thumb.jpg" -%}
+{%- assign t_hero = t_dir | append: p.hero.image -%}
+{%- assign t_src = nil -%}
+{%- assign t_hit = site.static_files | where: "path", t_small | first -%}
+{%- if t_hit -%}
+  {%- assign t_src = t_small -%}
+{%- elsif p.hero.image -%}
+  {%- assign t_hit = site.static_files | where: "path", t_hero | first -%}
+  {%- if t_hit -%}{%- assign t_src = t_hero -%}{%- endif -%}
+{%- endif -%}
+{%- if t_src -%}
+<div class="thumb"><img src="{{ t_src | relative_url }}" alt="{{ p.hero.alt | escape }}" loading="lazy" decoding="async"></div>
 {%- else -%}
 <div class="thumb thumb--tile" aria-hidden="true">
   <span class="thumb__id">{{ p.tile_label | default: p.title }}</span>
-  {%- if p.chains %}
-  <span class="thumb__path">
-    {%- for node in p.chains[0].nodes -%}
-      {{ node.name }}{% unless forloop.last %} <i>→</i> {% endunless %}
-    {%- endfor -%}
-  </span>
-  {%- endif %}
+  <span class="thumb__stack">{% for t in p.stack limit: 4 %}{{ t }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</span>
+  <span class="thumb__note">{% if p.status == "In progress" %}Photos coming with the build{% elsif p.proprietary %}Photos not public{% else %}Photo to be added{% endif %}</span>
 </div>
 {%- endif -%}

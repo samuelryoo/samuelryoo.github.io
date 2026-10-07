@@ -1,0 +1,20 @@
+# Personal photos for the "Off the bench" section of the About page.
+# Add a file with the matching name to assets/img/about/ and it appears. Missing files stay hidden.
+- file: guitar.jpg
+  alt: Samuel playing acoustic guitar
+  caption: Guitar
+- file: golf.jpg
+  alt: Samuel on the golf course
+  caption: Golf
+- file: dodgers.jpg
+  alt: At a Dodgers game
+  caption: Dodger Stadium
+- file: cooking.jpg
+  alt: Something Samuel cooked
+  caption: Cooking
+- file: san-gabriels.jpg
+  alt: Backpacking in the San Gabriel Mountains
+  caption: San Gabriel Mountains
+- file: tokyo.jpg
+  alt: Tokyo, summer 2026
+  caption: Tokyo, 2026

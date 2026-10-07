@@ -1,5 +1,9 @@
+{%- comment -%}
+  Project card. variant: "teaser" (home: image, name, one sentence),
+  "feature" (projects page: adds facts and tags), "compact" (smaller projects).
+{%- endcomment -%}
 {%- assign p = include.project -%}
-<article class="pcard{% if include.variant %} pcard--{{ include.variant }}{% endif %}">
+<article class="pcard pcard--{{ include.variant | default: 'compact' }}">
   <a class="pcard__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
     {% include project-thumb.html project=p %}
   </a>
@@ -7,17 +11,16 @@
     <p class="label">{{ p.kind }}{% if p.status == "In progress" %} <span class="pill">In progress</span>{% endif %}</p>
     <h3 class="pcard__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
     <p class="pcard__summary">{{ p.summary }}</p>
-    {%- if include.variant == "feature" and p.highlights %}
+    {%- if include.variant == "feature" and p.facts %}
     <ul class="pcard__points">
-      {%- for h in p.highlights limit: 3 %}<li>{{ h }}</li>{% endfor %}
+      {%- for f in p.facts limit: 3 %}<li>{{ f }}</li>{% endfor %}
     </ul>
     {%- endif %}
-    <dl class="pcard__meta">
-      <div><dt>Role</dt><dd>{{ p.role }}</dd></div>
-      <div><dt>When</dt><dd>{{ p.timeline }}</dd></div>
-    </dl>
+    {%- unless include.variant == "teaser" %}
     <ul class="tags" aria-label="Technologies">
-      {%- for t in p.stack limit: 6 %}<li>{{ t }}</li>{% endfor %}
+      {%- for t in p.stack limit: 5 %}<li>{{ t }}</li>{% endfor %}
     </ul>
+    {%- endunless %}
+    <p class="pcard__cta" aria-hidden="true">View case study <span>→</span></p>
   </div>
 </article>

@@ -1,27 +1,28 @@
 # Experience shown on the home page and /experience/.
 # section: research | work | leadership
+# Keep `points` to three or fewer; the detail belongs in the linked case study.
 - org: UCI Brain-Computer Interface Lab
   role: Undergraduate Researcher
   dates: Sep 2026 – present
   location: Irvine, CA
   section: research
+  brief: Recently joined. Getting started on the lab's hardware and microfabrication workflow.
   summary: >-
-    Joined the lab of Dr. An Do and Dr. Zoran Nenadic. I am onboarding to the lab's hardware and
-    microfabrication workflow. Planned work is in microfabrication and PCB and circuit design for
-    lab hardware.
+    I recently joined the lab of Dr. An Do and Dr. Zoran Nenadic and am currently learning its
+    hardware and microfabrication workflow. Upcoming work is expected to be in microfabrication
+    and in PCB and circuit design for lab hardware.
 
 - org: Refined Robotics
   role: Hardware Engineering Intern
   dates: Jun – Sep 2026
   location: Tokyo, Japan
   section: work
-  summary: Electrical and embedded work on the sensor and compute payload of an autonomous delivery robot.
+  brief: Power distribution, PCB design, and motor integration for an autonomous delivery robot.
+  summary: Hardware and electronics for an autonomous last-mile delivery robot.
   points:
-    - Re-architected payload power into isolated compute and actuator rails, each sized to its load budget, to keep motor switching noise off the sensors and cameras.
-    - Designed a 2-layer power distribution PCB in KiCad feeding five subsystems. Passed ERC and DRC with zero violations and released it for fabrication and assembly.
-    - Designed a second-revision board that measures every output branch with Kelvin shunts and INA3221 monitors, collected by an STM32G031 over I²C and reported to the host over UART.
-    - Replaced an open-loop servo mechanism with three stepper axes. Selected the NEMA17 motors and DRV8825 drivers and wrote the Arduino firmware that generates their STEP/DIR pulses.
-    - Integrated LiDAR, stereo cameras, GNSS, and the onboard Jetson computer at the hardware level, including Ethernet, USB, and GMSL2 links and the harness.
+    - Designed two revisions of a power distribution PCB in KiCad. The first was released for fabrication and assembly.
+    - Separated motor power from sensing and compute power, and wrote the firmware for a stepper-driven mechanism.
+    - Integrated the robot's sensors and onboard computer at the hardware level.
   project: delivery-robot-payload
 
 - org: ZotBotics at UCI
@@ -29,12 +30,11 @@
   dates: Jan – May 2025
   location: Irvine, CA
   section: work
+  brief: Led electrical design for a six-person team building a 4-DOF robotic arm.
   summary: Led electrical design for a six-person team building a 3-foot, 4-DOF robotic arm.
   points:
-    - Owned TB6560 stepper driver integration, power distribution, and embedded control on an Arduino Mega 2560 with a RAMPS shield.
-    - Isolated the high-current motor supply from the 5 V logic rail and added EMI filtering at the AC inlet.
-    - Wrote the C/C++ control loop that generates STEP/DIR pulses for the joints and PWM for the gripper, with limit switches enforcing travel limits.
-    - Completed all wiring and soldering for the control and power circuitry.
+    - Owned motor driver integration, power distribution, and the embedded control loop.
+    - Kept high-current motor power apart from the logic supply, and did all wiring and soldering.
   project: robot-arm
 
 - org: Making an Impact

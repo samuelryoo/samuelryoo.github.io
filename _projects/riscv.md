@@ -3,23 +3,22 @@ title: RV32I Single-Cycle Processor
 short_title: RISC-V CPU
 tile_label: RV32I
 summary: >-
-  A modular single-cycle RISC-V processor in Verilog with separate datapath and control, verified
-  by a self-checking testbench across 20 instruction cases.
+  A single-cycle RISC-V processor in Verilog with separate datapath and control, verified by a
+  self-checking testbench.
 kind: Digital design
-role: Designer
 timeline: Mar – Jun 2025
 status: Complete
-status_note: Verified in simulation. Not synthesized
 order: 6
-stack: [Verilog, Vivado, RV32I, Testbenches, Computer architecture]
-highlights:
-  - Datapath and control unit kept as separate modules with stable interfaces.
-  - Self-checking testbench with automated pass/fail on a 20 ns clock.
+stack: [Verilog, Vivado, RV32I, Testbenches]
+facts:
   - 20 instruction cases verified across R-type, I-type, load, and store.
-specs:
-  - { label: Design, value: "Program counter, register file, ALU, memory interfaces, control unit" }
-  - { label: Verification, value: "Unit and integration testbenches, self-checking, 20 ns clock" }
+  - Verified in simulation. Not synthesized.
+glance:
+  - { label: Role, value: Designer }
+  - { label: System, value: "RV32I single-cycle processor: program counter, register file, ALU, memory interfaces, control unit" }
+  - { label: Verification, value: "Unit and integration testbenches, self-checking with automated pass/fail, 20 ns clock" }
   - { label: Tools, value: "Verilog, Vivado" }
+  - { label: Result, value: "All 20 instruction cases pass in simulation. Not synthesized" }
 chains:
   - title: Instruction path, one clock cycle
     nodes:

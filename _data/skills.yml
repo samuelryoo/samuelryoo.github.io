@@ -1,12 +1,12 @@
-# Toolchain shown on the home and About pages. Only list things you can explain in an interview.
+# Toolchain shown on the About page. Only list things you can explain in an interview.
 - group: Languages
   items: [C, C++, Embedded C, Python, Verilog]
-- group: Microcontrollers
-  items: [ATmega32, ESP32, STM32, Arduino]
+- group: MCUs
+  items: [ATmega32, ESP32, Arduino]
 - group: Firmware
   items: [Bare-metal register-level code, Interrupt-driven design, Hardware timers, Stepper and servo control]
 - group: Hardware
-  items: [Schematic capture and PCB layout, Power distribution, Decoupling, Current sensing, Wiring and harnessing, Soldering]
+  items: [Schematic capture and PCB layout, Power distribution, Wiring and harnessing, Soldering]
 - group: Interfaces
   items: [UART, I²C, PWM, GPIO]
 - group: Tools

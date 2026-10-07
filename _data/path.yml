@@ -1,0 +1,16 @@
+# The short engineering story on the About page. One line each.
+- when: "2025"
+  stage: First builds
+  text: Led the electrical work on a robotic arm with ZotBotics.
+- when: "2025"
+  stage: Embedded systems
+  text: Wrote bare-metal firmware on an AVR microcontroller and built a RISC-V processor in Verilog.
+- when: "2025"
+  stage: Things that fly
+  text: Set up the radio and telemetry links on a multirotor.
+- when: "2026"
+  stage: Tokyo
+  text: Spent a summer as a hardware engineering intern on an autonomous delivery robot.
+- when: "Now"
+  stage: Neuroengineering
+  text: Recently joined UC Irvine's Brain-Computer Interface Lab, and building an EMG-controlled hand.

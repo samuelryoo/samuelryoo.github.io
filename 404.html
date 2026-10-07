@@ -4,7 +4,8 @@ permalink: /404.html
 sitemap: false
 ---
 <section class="wrap page-head">
-  <p class="label">404</p>
+  {% include signal-flat.html %}
+  <p class="label">404 · Signal lost</p>
   <h1>Page not found</h1>
   <p class="lead">That address does not exist. The page may have moved.</p>
   <div class="actions">
@@ -12,3 +13,17 @@ sitemap: false
     <a class="btn" href="{{ '/projects/' | relative_url }}">Projects</a>
   </div>
 </section>
+
+{%- comment %}
+  Catches near-misses of real addresses: wrong letter case, a missing trailing slash, or an old
+  ".html" ending. If the cleaned-up address matches a real page, send the visitor there.
+{% endcomment %}
+<script>
+(function () {
+  var routes = [{% for p in site.pages %}{% if p.title and p.sitemap != false %}{{ p.url | jsonify }},{% endif %}{% endfor %}{% for p in site.projects %}{{ p.url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}];
+  var want = location.pathname.toLowerCase().replace(/index\.html$/, "").replace(/\.html$/, "/").replace(/\/?$/, "/");
+  for (var i = 0; i < routes.length; i++) {
+    if (routes[i].toLowerCase() === want && routes[i] !== location.pathname) { location.replace(routes[i]); return; }
+  }
+})();
+</script>
