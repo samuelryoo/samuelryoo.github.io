@@ -1,0 +1,23 @@
+{%- assign p = include.project -%}
+<article class="pcard{% if include.variant %} pcard--{{ include.variant }}{% endif %}">
+  <a class="pcard__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {% include project-thumb.html project=p %}
+  </a>
+  <div class="pcard__body">
+    <p class="label">{{ p.kind }}{% if p.status == "In progress" %} <span class="pill">In progress</span>{% endif %}</p>
+    <h3 class="pcard__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="pcard__summary">{{ p.summary }}</p>
+    {%- if include.variant == "feature" and p.highlights %}
+    <ul class="pcard__points">
+      {%- for h in p.highlights limit: 3 %}<li>{{ h }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+    <dl class="pcard__meta">
+      <div><dt>Role</dt><dd>{{ p.role }}</dd></div>
+      <div><dt>When</dt><dd>{{ p.timeline }}</dd></div>
+    </dl>
+    <ul class="tags" aria-label="Technologies">
+      {%- for t in p.stack limit: 6 %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+  </div>
+</article>

@@ -1,0 +1,49 @@
+{%- assign page_title = page.title | default: site.tagline -%}
+{%- if page.url == "/" -%}
+  {%- assign full_title = site.title | append: " — " | append: site.tagline -%}
+{%- else -%}
+  {%- assign full_title = page_title | append: " — " | append: site.title -%}
+{%- endif -%}
+{%- assign page_desc = page.summary | default: page.description | default: site.description | strip_html | strip_newlines -%}
+{%- assign og_image = "/assets/img/og.png" -%}
+{%- if page.collection == "projects" and page.hero.image -%}
+  {%- assign hero_path = "/assets/projects/" | append: page.slug | append: "/" | append: page.hero.image -%}
+  {%- assign hero_hit = site.static_files | where: "path", hero_path | first -%}
+  {%- if hero_hit -%}{%- assign og_image = hero_path -%}{%- endif -%}
+{%- endif %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ full_title | escape }}</title>
+<meta name="description" content="{{ page_desc | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.collection == 'projects' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ page_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ og_image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/ibm-plex-sans-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{%- if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "description": {{ site.description | strip_newlines | jsonify }},
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, Irvine" },
+  "knowsAbout": ["Embedded systems", "Firmware", "Robotics", "PCB design", "Brain-computer interfaces"],
+  "sameAs": [
+    "https://github.com/{{ site.author.github }}",
+    "https://www.linkedin.com/in/{{ site.author.linkedin }}/"
+  ]
+}
+</script>
+{%- endif %}
