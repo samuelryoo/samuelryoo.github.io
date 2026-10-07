@@ -5,26 +5,25 @@ tile_label: UAV-LINK
 # Keeps the original address of this page so existing links keep working.
 permalink: /projects/UAV/
 summary: >-
-  Radio link, telemetry chain, and serial configuration for a multirotor: getting a transmitter,
-  receiver, autopilot, and ground station to talk to each other reliably.
+  Getting a transmitter, a receiver, an autopilot, and a ground station to agree: the radio link,
+  telemetry, and serial configuration of a multirotor.
 kind: Team project · Avionics
-role: Radio link, telemetry, and system configuration
-team: 4 people
 timeline: Sep – Dec 2025
 status: Complete
-order: 3
+order: 4
 featured: true
-stack: [ArduPilot, ExpressLRS, EdgeTX, CRSF, MAVLink, UART, ESP32, Mission Planner]
+stack: [ArduPilot, ExpressLRS, CRSF, MAVLink, UART, ESP32]
 coursework: EECS 195, Drones
-highlights:
+facts:
   - Flashed ExpressLRS on the transmitter and receiver and verified a two-way CRSF link.
-  - Remapped the flight controller's UARTs in ArduPilot so CRSF runs through SERIAL6.
-  - Set up an ESP32 telemetry bridge streaming MAVLink at 57.6 kbaud over WiFi to the ground station.
-specs:
-  - { label: Hardware, value: "Matek F405 flight controller, Happymodel EP2 receiver, Radiomaster Pocket transmitter, ESP32" }
-  - { label: Firmware, value: "ArduPilot, ExpressLRS, EdgeTX, DroneBridge (configured and flashed, not written by me)" }
-  - { label: Protocols, value: "CRSF for control, MAVLink for telemetry, both over UART" }
-  - { label: Ground station, value: "Mission Planner over UDP WiFi" }
+  - Remapped the autopilot's UARTs in ArduPilot so CRSF runs through SERIAL6.
+  - Set up an ESP32 bridge streaming MAVLink telemetry over WiFi to the ground station.
+glance:
+  - { label: Role, value: "Radio link, telemetry, and system configuration, on a team of four" }
+  - { label: System, value: "Matek F405 running ArduPilot, ExpressLRS radio, ESP32 telemetry bridge, Mission Planner ground station" }
+  - { label: My contribution, value: "Flashed and configured the radio, remapped the autopilot's serial ports, set up telemetry and failsafe, calibrated the current sensor" }
+  - { label: Scope, value: "Configured and debugged existing firmware. I did not write flight control code or work on the motor speed controllers" }
+  - { label: Result, value: "Multiple test flights with live telemetry on the ground station" }
 chains:
   - title: Control link
     nodes:
@@ -41,6 +40,8 @@ hero:
   alt: Assembled quadcopter held in hand
   video: demo.mp4
   caption: Flight clip from testing.
+actions:
+  - { label: Watch flight clip, file: demo.mp4 }
 media:
   - file: frame-wiring.jpg
     alt: Quadcopter frame laid flat with flight controller, four motors and wiring harness attached

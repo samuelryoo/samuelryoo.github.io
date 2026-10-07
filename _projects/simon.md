@@ -3,25 +3,25 @@ title: Bare-Metal Memory Game on an ATmega32
 short_title: AVR Memory Game
 tile_label: AVR-GAME
 summary: >-
-  A Simon-style memory game written in embedded C with no RTOS and no hardware abstraction layer:
-  register-level GPIO, timer-based timing, a scanned keypad, an LCD, and audio from a single pin.
+  A Simon-style game used as a test of bare-metal firmware: four peripherals with conflicting
+  timing on one ATmega32, with no RTOS and no hardware abstraction layer.
 kind: Embedded project · Firmware
-role: Firmware, schematic, and assembly
-team: 2 people
 timeline: Aug – Oct 2025
 status: Complete
-order: 2
+order: 3
 featured: true
-stack: [Embedded C, ATmega32, Bare-metal, Timers, Interrupts, GPIO, KiCad]
+stack: [Embedded C, ATmega32, Bare-metal, Timers, Interrupts, KiCad]
 coursework: COMPSCI 145, Embedded Software
-highlights:
-  - GPIO configured directly through DDRx, PORTx, and PINx registers with bit masking.
-  - Millisecond timing from Timer0 and its overflow flag instead of counted delay loops.
-  - Interrupt-driven firmware around a non-blocking main loop so no peripheral holds the CPU.
-specs:
-  - { label: Hardware, value: "ATmega32, 4×4 matrix keypad, LEDs, character LCD, speaker" }
-  - { label: Firmware, value: "Embedded C on bare metal. No RTOS, no HAL, no blocking delays" }
-  - { label: Tools, value: "KiCad for the schematic" }
+facts:
+  - GPIO configured at the register level (DDRx, PORTx, PINx) with bit masking.
+  - Millisecond timing from Timer0 and its overflow flag, not counted delay loops.
+  - Interrupt-driven firmware around a main loop that never blocks.
+glance:
+  - { label: Role, value: "Firmware, schematic, and assembly, on a team of two" }
+  - { label: System, value: "ATmega32 driving a 4×4 matrix keypad, LEDs, a character LCD, and a speaker" }
+  - { label: My contribution, value: "Co-wrote the firmware, designed the full schematic in KiCad, assembled and debugged the hardware" }
+  - { label: Tools / interfaces, value: "Embedded C on bare metal, GPIO, Timer0, interrupts, KiCad" }
+  - { label: Result, value: "Working game with consistent input response, shown in the demo video" }
 chains:
   - title: Peripherals
     nodes:
@@ -33,6 +33,9 @@ hero:
   alt: Breadboard with an ATmega32, four LEDs, a character LCD showing the game title, a keypad and a speaker
   video: demo.mp4
   caption: A round of the game.
+actions:
+  - { label: Watch demo, file: demo.mp4 }
+  - { label: View schematic, file: schematic.jpg }
 media:
   - file: schematic.jpg
     alt: KiCad schematic of the ATmega32 connected to the keypad, LEDs, LCD and speaker

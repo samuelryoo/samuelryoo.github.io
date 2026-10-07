@@ -3,24 +3,23 @@ title: CMOS NAND Gate Sizing and Characterization
 short_title: CMOS NAND
 tile_label: NAND2
 summary: >-
-  Transistor-level design of a CMOS NAND gate in Cadence Virtuoso: sized to center the switching
-  threshold, then characterized for delay across supply voltage and temperature.
+  Transistor-level design of a CMOS NAND gate in Cadence Virtuoso, sized to center the switching
+  threshold and characterized across supply voltage and temperature.
 kind: Course project · IC design
-role: Designer
 timeline: Oct – Dec 2025
 status: Complete
-status_note: Schematic-level simulation. No layout
 order: 7
-stack: [Cadence Virtuoso, CMOS, Parametric analysis, Device sizing, Delay characterization]
+stack: [Cadence Virtuoso, CMOS, Device sizing, Delay analysis]
 coursework: CSE 112, Electronic Devices and Circuits
-highlights:
-  - "Swept PMOS width from 100 to 200 nm and set a 1.35:1 PMOS-to-NMOS ratio to center the threshold at VDD/2."
-  - "Delay fell 34% as VDD rose from 0.8 to 1.2 V."
-  - "Delay rose 65% from 0 to 90 °C."
-specs:
-  - { label: Device sizes, value: "L = 50 nm. NMOS W = 100 nm, PMOS W = 135 nm" }
-  - { label: Sweeps, value: "VDD 0.8–1.2 V in 0.05 V steps. Temperature 0–90 °C in 5 °C steps" }
+facts:
+  - "1.35:1 PMOS-to-NMOS width ratio centers the switching threshold at VDD/2."
+  - "Delay falls 34% from 0.8 to 1.2 V and rises 65% from 0 to 90 °C."
+glance:
+  - { label: Role, value: Designer }
+  - { label: System, value: "Two-input CMOS NAND gate, schematic level" }
+  - { label: Method, value: "Parametric sweep of PMOS width, then delay measured across supply voltage and temperature" }
   - { label: Tools, value: "Cadence Virtuoso, parametric and transient analysis" }
+  - { label: Result, value: "1.35:1 width ratio centers the threshold. Delay falls 34% from 0.8 to 1.2 V and rises 65% from 0 to 90 °C. Simulation only, no layout" }
 hero:
   image: hero.jpg
   alt: Cadence Virtuoso schematic of the CMOS NAND gate with PMOS pull-up and NMOS pull-down transistors

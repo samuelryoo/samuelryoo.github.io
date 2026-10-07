@@ -3,25 +3,24 @@ title: EMG-Controlled Robotic Hand
 short_title: EMG Hand
 tile_label: sEMG-01
 summary: >-
-  A forearm muscle signal closes a servo hand. Surface EMG is sampled over I²C and filtered in
-  real time on an ESP32. In progress: the design is done and the build is underway.
+  A forearm muscle signal closes a servo hand. Surface EMG is sampled and filtered in real time
+  on a microcontroller. The design is done and the build is underway.
 kind: Personal project · Biosignals
-role: Sole designer and builder
 timeline: Aug 2026 – present
 status: In progress
-status_note: In progress. No measured results yet
-order: 4
+order: 2
 featured: true
-stack: [ESP32, ADS1015, MyoWare sEMG, I²C, PWM, BLE, Real-time DSP, Python]
-highlights:
-  - "Signal chain: sEMG sensor, external ADC over I²C, then bandpass, mains notch, rectify, and envelope on an ESP32."
-  - Separate servo supply joined to the sensor side at a single star ground.
-  - Sensor's analog envelope wired to a second ADC channel as a reference for the firmware filter.
-specs:
-  - { label: Hardware, value: "ESP32, MyoWare sEMG sensor, ADS1015 ADC, servos, separate 5 V servo supply" }
-  - { label: Firmware, value: "Real-time DSP on the ESP32: bandpass, 50/60 Hz notch, rectification, envelope detection" }
-  - { label: Interfaces, value: "I²C (ADC), PWM (servos), BLE (telemetry)" }
-  - { label: Tools, value: "Python for live plotting" }
+stack: [ESP32, sEMG, I²C, Real-time DSP, PWM, BLE]
+facts:
+  - "Signal chain: sEMG sensor, ADC over I²C, real-time filtering on an ESP32, servo output."
+  - Separate servo supply and a single star ground keep motor noise out of the measurement.
+  - Build in progress. No measured results yet.
+glance:
+  - { label: Role, value: "Sole designer and builder" }
+  - { label: System, value: "Surface EMG acquisition, real-time filtering on an ESP32, servo actuation" }
+  - { label: Design focus, value: "Keeping a very small biosignal clean next to servos that draw large current spikes" }
+  - { label: Tools / interfaces, value: "ESP32, ADS1015 ADC over I²C, PWM, BLE, Python for live plotting" }
+  - { label: Status, value: "Design complete. Assembly and bring-up in progress. No measured results yet" }
 chains:
   - title: Signal chain
     nodes:
@@ -38,6 +37,9 @@ hero:
   image: hero.jpg          # Add a photo of the hand and electronics here
   alt: Servo-driven hand with the EMG sensor and ESP32 electronics
   video: demo.mp4          # Add the demo video here once the hand responds to muscle input
+  placeholder: Build in progress. Photos and a demo video go here once the hand responds to muscle input.
+actions:
+  - { label: Watch demo, file: demo.mp4 }
 media:
   - file: bench-wiring.jpg  # Add wiring / breadboard photo here
     alt: ESP32, ADC and EMG sensor wired on the bench

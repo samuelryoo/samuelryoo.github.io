@@ -3,23 +3,22 @@ title: Electrical System for a 4-DOF Robotic Arm
 short_title: Robotic Arm
 tile_label: ARM-4DOF
 summary: >-
-  Electrical lead on a 3-foot, 3D-printed robotic arm: stepper driver integration, power
-  distribution, and the embedded control loop, with the motor supply kept apart from logic.
+  Electrical lead on a 3-foot, 3D-printed robotic arm: motor drivers, power distribution, and
+  the control loop, with motor power kept apart from logic.
 kind: Team project · ZotBotics at UCI
-role: Electrical Systems Lead
-team: 6 people
 timeline: Jan – May 2025
 status: Complete
 order: 5
-stack: [Arduino Mega 2560, RAMPS, TB6560, Stepper control, PWM, C/C++, Power distribution, Soldering]
-highlights:
+stack: [Arduino Mega, TB6560, Stepper control, PWM, C/C++]
+facts:
   - Owned motor drivers, power distribution, and embedded control for a six-person team.
-  - Kept high-current motor wiring separate from the 5 V logic rail and filtered the AC inlet.
-  - STEP/DIR pulse trains for the joints, PWM for the gripper, limit switches for safe travel.
-specs:
-  - { label: Hardware, value: "Arduino Mega 2560 with RAMPS shield, TB6560 stepper drivers, stepper joints, servo gripper, EMI-filtered AC inlet" }
-  - { label: Firmware, value: "C/C++ control loop: STEP/DIR generation, PWM, limit-switch inputs" }
-  - { label: Size, value: "About 3 ft tall, 4 degrees of freedom, 3D printed" }
+  - Kept high-current motor wiring separate from the 5 V logic rail.
+glance:
+  - { label: Role, value: "Electrical Systems Lead, on a team of six" }
+  - { label: System, value: "3 ft, 4-DOF 3D-printed arm with stepper-driven joints and a servo gripper" }
+  - { label: My contribution, value: "Motor driver integration, power distribution, the control loop, and all wiring and soldering" }
+  - { label: Tools / interfaces, value: "Arduino Mega 2560 with RAMPS, TB6560 drivers, STEP/DIR, PWM, C/C++" }
+  - { label: Result, value: "Consistent, repeatable motion" }
 chains:
   - title: Control
     nodes:
@@ -35,6 +34,8 @@ hero:
   image: hero.jpg
   alt: The six-person ZotBotics team standing behind the finished robotic arm on a table
   caption: The team with the finished arm.
+actions:
+  - { label: Watch the arm move, file: motion-demo.mp4 }
 media:
   - file: drivers-power.jpg
     alt: Row of TB6560 stepper drivers wired to a power supply and breadboard on a workbench
