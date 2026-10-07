@@ -1,0 +1,42 @@
+# Site settings — edit these if your name, links, or tagline change.
+title: Samuel Ryoo
+tagline: Embedded systems, robotics, and neuroengineering
+description: >-
+  Samuel Ryoo is a Computer Science and Engineering student at UC Irvine building
+  electronics and firmware for robots, drones, and biosignal hardware.
+url: https://samuelryoo.github.io
+baseurl: ""
+
+author:
+  name: Samuel Ryoo
+  email: 1002samryoo@gmail.com
+  github: samuelryoo
+  linkedin: samuelryoo
+  location: Irvine, CA
+  school: UC Irvine
+
+resume_pdf: /assets/resume/Samuel_Ryoo_Resume.pdf
+
+# Each file in _projects/ becomes a page at /projects/<file-name>/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "", type: pages }
+    values: { layout: default }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
